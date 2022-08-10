@@ -3,6 +3,7 @@
   "private": false,
   "description": "A minimal Gatsby theme for Obsidian based authoring",
   "version": "0.1.0",
+  "license": "MIT",
   "author": "Matthew Y.F. <matt.y.poon24@gmail.com>",
   "bugs": {
     "url": "https://github.com/mpoon2/phoebe/issues"
@@ -11,6 +12,7 @@
     "@babel/core": "^7.18.10",
     "@react-keycloak/web": "^3.4.0",
     "babel-eslint": "^10.1.0",
+    "eslint": "^8.21.0",
     "gatsby": "^4.20.0",
     "gatsby-plugin-feed": "^4.20.0",
     "gatsby-plugin-image": "^2.20.0",
@@ -40,7 +42,6 @@
   "keywords": [
     "gatsby"
   ],
-  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mpoon2/phoebe.git"
