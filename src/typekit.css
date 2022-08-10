@@ -1,0 +1,80 @@
+/*
+ * The Typekit service used to deliver this font or fonts for use on websites
+ * is provided by Adobe and is subject to these Terms of Use
+ * http://www.adobe.com/products/eulas/tou_typekit. For font license
+ * information, see the list below.
+ *
+ * bely:
+ *   - http://typekit.com/eulas/00000000000000007735b06b
+ *   - http://typekit.com/eulas/00000000000000007735b071
+ *   - http://typekit.com/eulas/00000000000000007735b076
+ *   - http://typekit.com/eulas/00000000000000007735b079
+ *
+ * © 2009-2022 Adobe Systems Incorporated. All Rights Reserved.
+ */
+/*{"last_published":"2022-08-10 17:50:48 UTC"}*/
+
+@import url("https://p.typekit.net/p.css?s=1&k=dsn0wzu&ht=tk&f=31659.31660.31661.31662&a=49464190&app=typekit&e=css");
+
+@font-face {
+  font-family: "bely";
+  src: url("https://use.typekit.net/af/2f2502/00000000000000007735b06b/30/l?primer=388f68b35a7cbf1ee3543172445c23e26935269fadd3b392a13ac7b2903677eb&fvd=i4&v=3")
+      format("woff2"),
+    url("https://use.typekit.net/af/2f2502/00000000000000007735b06b/30/d?primer=388f68b35a7cbf1ee3543172445c23e26935269fadd3b392a13ac7b2903677eb&fvd=i4&v=3")
+      format("woff"),
+    url("https://use.typekit.net/af/2f2502/00000000000000007735b06b/30/a?primer=388f68b35a7cbf1ee3543172445c23e26935269fadd3b392a13ac7b2903677eb&fvd=i4&v=3")
+      format("opentype");
+  font-display: swap;
+  font-style: italic;
+  font-weight: 400;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: "bely";
+  src: url("https://use.typekit.net/af/a9a7d6/00000000000000007735b071/30/l?primer=388f68b35a7cbf1ee3543172445c23e26935269fadd3b392a13ac7b2903677eb&fvd=n4&v=3")
+      format("woff2"),
+    url("https://use.typekit.net/af/a9a7d6/00000000000000007735b071/30/d?primer=388f68b35a7cbf1ee3543172445c23e26935269fadd3b392a13ac7b2903677eb&fvd=n4&v=3")
+      format("woff"),
+    url("https://use.typekit.net/af/a9a7d6/00000000000000007735b071/30/a?primer=388f68b35a7cbf1ee3543172445c23e26935269fadd3b392a13ac7b2903677eb&fvd=n4&v=3")
+      format("opentype");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: "bely";
+  src: url("https://use.typekit.net/af/a2f22a/00000000000000007735b076/30/l?primer=388f68b35a7cbf1ee3543172445c23e26935269fadd3b392a13ac7b2903677eb&fvd=n7&v=3")
+      format("woff2"),
+    url("https://use.typekit.net/af/a2f22a/00000000000000007735b076/30/d?primer=388f68b35a7cbf1ee3543172445c23e26935269fadd3b392a13ac7b2903677eb&fvd=n7&v=3")
+      format("woff"),
+    url("https://use.typekit.net/af/a2f22a/00000000000000007735b076/30/a?primer=388f68b35a7cbf1ee3543172445c23e26935269fadd3b392a13ac7b2903677eb&fvd=n7&v=3")
+      format("opentype");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: "bely";
+  src: url("https://use.typekit.net/af/ee13fc/00000000000000007735b079/30/l?primer=388f68b35a7cbf1ee3543172445c23e26935269fadd3b392a13ac7b2903677eb&fvd=i7&v=3")
+      format("woff2"),
+    url("https://use.typekit.net/af/ee13fc/00000000000000007735b079/30/d?primer=388f68b35a7cbf1ee3543172445c23e26935269fadd3b392a13ac7b2903677eb&fvd=i7&v=3")
+      format("woff"),
+    url("https://use.typekit.net/af/ee13fc/00000000000000007735b079/30/a?primer=388f68b35a7cbf1ee3543172445c23e26935269fadd3b392a13ac7b2903677eb&fvd=i7&v=3")
+      format("opentype");
+  font-display: swap;
+  font-style: italic;
+  font-weight: 700;
+  font-stretch: normal;
+}
+
+.tk-bely {
+  font-family: "bely", serif;
+}
+.tk-bely-display {
+  font-family: "bely-display", sans-serif;
+}
