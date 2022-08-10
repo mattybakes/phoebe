@@ -1,3 +1,8 @@
+/**
+ * Lets you alter the content of static HTML files as they are being
+ * Server-Side Rendered (SSR) by Gatsby and Node.js.
+ */
+
 import React from "react"
 import { ReactKeycloakProvider } from "@react-keycloak/web"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -27,5 +32,5 @@ export const wrapRootElement = ({ element }) => {
 }
 
 export const onRenderBody = ({ setHtmlAttributes }) => {
-  setHtmlAttributes({ lang: 'en' });
-};
+  setHtmlAttributes({ lang: "en" })
+}
