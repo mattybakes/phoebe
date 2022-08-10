@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faSpinner } from "@fortawesome/free-solid-svg-icons"
 
 const Loading = () => (
-  <div className="text-center py-8 block">
+  <div className="init">
     <p>
       <FontAwesomeIcon icon={faSpinner} spinPulse size="xl" />
     </p>
@@ -13,6 +13,8 @@ const Loading = () => (
 )
 
 export const wrapRootElement = ({ element }) => {
+  var lang = "en"
+  document.documentElement.lang = newLang
   return (
     <ReactKeycloakProvider
       authClient={{}} //an empty object instead of the keycloak instance for the static HTML pages
@@ -25,3 +27,7 @@ export const wrapRootElement = ({ element }) => {
     </ReactKeycloakProvider>
   )
 }
+
+export const onRenderBody = ({ setHtmlAttributes }) => {
+  setHtmlAttributes({ lang: 'en' });
+};
