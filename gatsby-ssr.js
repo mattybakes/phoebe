@@ -13,8 +13,6 @@ const Loading = () => (
 )
 
 export const wrapRootElement = ({ element }) => {
-  var lang = "en"
-  document.documentElement.lang = newLang
   return (
     <ReactKeycloakProvider
       authClient={{}} //an empty object instead of the keycloak instance for the static HTML pages
