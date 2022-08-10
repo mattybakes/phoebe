@@ -24,6 +24,7 @@ const BlogIndex = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
+      <p>Chinese Character Test: 潘怡暉</p>
       <Bio />
       <ol style={{ listStyle: `none` }}>
         {posts.map(post => {
