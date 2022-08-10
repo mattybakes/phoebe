@@ -8,6 +8,7 @@
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   },
   "dependencies": {
+    "@react-keycloak/web": "^3.4.0",
     "gatsby": "^4.20.0",
     "gatsby-plugin-feed": "^4.20.0",
     "gatsby-plugin-image": "^2.20.0",
