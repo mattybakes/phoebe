@@ -1,6 +1,6 @@
 {
   "name": "phoebe",
-  "private": false,
+  "private": true,
   "description": "A minimal Gatsby theme for Obsidian based authoring",
   "version": "0.1.0",
   "license": "MIT",
@@ -10,6 +10,9 @@
   },
   "dependencies": {
     "@babel/core": "^7.18.10",
+    "@fortawesome/fontawesome-svg-core": "^6.1.2",
+    "@fortawesome/free-solid-svg-icons": "^6.1.2",
+    "@fortawesome/react-fontawesome": "^0.2.0",
     "@react-keycloak/web": "^3.4.0",
     "babel-eslint": "^10.1.0",
     "eslint": "^8.21.0",
