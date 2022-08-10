@@ -10,14 +10,15 @@ import { faSpinner } from "@fortawesome/free-solid-svg-icons"
 import keycloak from "./src/components/keycloak"
 
 // custom typefaces
-import "typeface-montserrat"
-import "typeface-merriweather"
+import "@fontsource/inter/variable.css"
+import "@fontsource/ibm-plex-mono"
 // normalize CSS across browsers
 import "./src/normalize.css"
 // custom CSS styles
 import "./src/style.css"
 // Highlighting for code blocks
-import "prismjs/themes/prism.css"
+import("./src/prismjs/nord-light.scss")
+import("./src/prismjs/nord-dark.scss")
 
 const Loading = () => (
   <div className="init">

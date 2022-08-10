@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@babel/core": "^7.18.10",
+    "@fontsource/ibm-plex-mono": "^4.5.11",
+    "@fontsource/inter": "^4.5.12",
     "@fortawesome/fontawesome-svg-core": "^6.1.2",
     "@fortawesome/free-solid-svg-icons": "^6.1.2",
     "@fortawesome/react-fontawesome": "^0.2.0",
