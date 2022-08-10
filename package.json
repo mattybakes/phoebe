@@ -12,6 +12,7 @@
     "gatsby": "^4.20.0",
     "gatsby-plugin-feed": "^4.20.0",
     "gatsby-plugin-image": "^2.20.0",
+    "gatsby-plugin-json-output": "^1.2.0",
     "gatsby-plugin-manifest": "^4.20.0",
     "gatsby-plugin-sharp": "^4.20.0",
     "gatsby-remark-copy-linked-files": "^5.20.0",
