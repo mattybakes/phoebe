@@ -4,5 +4,5 @@
  * Ref: https://www.joshwcomeau.com/react/file-structure/
  */
 
-export * from "./Keycloak"
-export { default } from "./Keycloak"
+export * from "./keycloak"
+export { default } from "./keycloak"
