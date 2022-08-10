@@ -1,15 +1,17 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `mattycakes`,
+    subtitle: `Self-hosted Digital Garden.`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `mattycakes`,
+      summary: `who lives and studies in Mississauga.`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
-    social: {
-      twitter: `kylemathews`,
-    },
+    description: `The digital garden of mattycakes, created in Gatbsy and other technologies.`,
+    siteUrl: `https://mattycakes.ca/`,
   },
   plugins: [
     {
@@ -59,7 +61,7 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/content/blog`,
+        path: `${__dirname}/content`,
         name: `blog`,
       },
     },
@@ -142,7 +144,7 @@ module.exports = {
               }
             `,
             output: "/rss.xml",
-            title: "Gatsby Starter Blog RSS Feed",
+            title: "Mattycakes Digital Garden RSS Feed",
           },
         ],
       },
@@ -150,15 +152,16 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `Mattycake's Digital Garden`,
+        short_name: `Mattycakes`,
         start_url: `/`,
-        background_color: `#ffffff`,
+        background_color: `#f8f9fb`,
         // This will impact how browsers show your PWA/website
         // https://css-tricks.com/meta-theme-color-and-trickery/
-        // theme_color: `#663399`,
-        display: `minimal-ui`,
+        theme_color: `#2e3440`,
+        display: `standalone`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        theme_color_in_head: false, // This will avoid adding theme-color meta tag, for dark/light mode.
       },
     },
   ],
