@@ -20,6 +20,10 @@ import "./src/style.css"
 import("./src/prismjs/nord-light.scss")
 import("./src/prismjs/nord-dark.scss")
 
+/**
+ * Initialization spinner component
+ * @returns div containing a loader
+ */
 const Loading = () => (
   <div className="init">
     <p>
@@ -29,7 +33,10 @@ const Loading = () => (
   </div>
 )
 
-// Wrap everything inside KeycloakProvider
+/**
+ * Wrap a Keycloak provided component around a page Element for authentication.
+ * @returns element wrapped in an Keycloak provider
+ */
 export const wrapRootElement = ({ element }) => {
   return (
     <ReactKeycloakProvider authClient={keycloak} LoadingComponent={<Loading />}>
