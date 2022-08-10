@@ -8,6 +8,10 @@ import { ReactKeycloakProvider } from "@react-keycloak/web"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faSpinner } from "@fortawesome/free-solid-svg-icons"
 
+/**
+ * Initialization spinner component
+ * @returns div containing a loader
+ */
 const Loading = () => (
   <div className="init">
     <p>
@@ -17,6 +21,11 @@ const Loading = () => (
   </div>
 )
 
+/**
+ * Wrap a Keycloak provided component around a page Element to bypass gatsby
+ * build issues.
+ * @returns element wrapped in an empty Key Cloak Provided
+ */
 export const wrapRootElement = ({ element }) => {
   return (
     <ReactKeycloakProvider
@@ -31,6 +40,41 @@ export const wrapRootElement = ({ element }) => {
   )
 }
 
-export const onRenderBody = ({ setHtmlAttributes }) => {
-  setHtmlAttributes({ lang: "en" })
+/**
+ * Set HTML lang field to en for accessibility (readers)
+ */
+const HtmlAttributes = {
+  lang: "en",
+}
+
+/**
+ * Set Adobe Typekit fonts in the Head
+ */
+const HeadComponents = [
+  // Bely
+  <link rel="stylesheet" href="https://use.typekit.net/dsn0wzu.css" />,
+  // Source Han Sans
+  <script
+    dangerouslySetInnerHTML={{
+      __html: `
+        (function(d) {
+          var config = {
+            kitId: 'ysu4ixp',
+            scriptTimeout: 3000,
+            async: true
+          },
+          h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+        })(document);
+      `,
+    }}
+  />,
+]
+
+/**
+ * Called after every page Gatsby server renders while building HTML so you can
+ * set head and body components to be rendered in your html.js.
+ */
+export const onRenderBody = ({ setHeadComponents, setHtmlAttributes }) => {
+  setHeadComponents(HeadComponents)
+  setHtmlAttributes(HtmlAttributes)
 }
