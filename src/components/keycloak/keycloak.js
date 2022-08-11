@@ -1,5 +1,7 @@
 /**
- * Creates a Keycloak client using keycloak-js and the url, realm and clientId from the .env files.
+ * Keycloak Client Component
+ * Creates a Keycloak client using keycloak-js and the url, realm and clientId
+ * from the .env files.
  */
 
 import Keycloak from "keycloak-js"
