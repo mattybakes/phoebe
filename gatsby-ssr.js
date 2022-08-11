@@ -52,7 +52,7 @@ const HtmlAttributes = {
  * Set Adobe Typekit fonts in the Head
  */
 const HeadComponents = [
-  <Script
+  <script
     id="source-han-sans"
     dangerouslySetInnerHTML={{
       __html: `
