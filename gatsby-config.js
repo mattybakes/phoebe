@@ -1,5 +1,5 @@
 require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV}`
+  path: `.env.${process.env.NODE_ENV}`,
 })
 
 module.exports = {
@@ -8,12 +8,13 @@ module.exports = {
     subtitle: `Self-hosted Digital Garden.`,
     author: {
       name: `mattycakes`,
-      summary: `who lives and studies in Mississauga.`
+      summary: `who lives and studies in Mississauga.`,
     },
     description: `The digital garden of mattycakes, created in Gatbsy and other technologies.`,
-    siteUrl: `https://mattycakes.ca/`
+    siteUrl: `https://mattycakes.ca/`,
   },
   plugins: [
+    "gatsby-plugin-use-dark-mode",
     `gatsby-plugin-sass`,
     {
       resolve: `gatsby-plugin-json-output`,
@@ -54,24 +55,24 @@ module.exports = {
             html: node.html,
             status: node.frontmatter.status,
             raw_markdown_body: node.rawMarkdownBody,
-            page_priority_score: 10
-          }))
-      }
+            page_priority_score: 10,
+          })),
+      },
     },
     `gatsby-plugin-image`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/content`,
-        name: `blog`
-      }
+        name: `blog`,
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/images`
-      }
+        path: `${__dirname}/src/images`,
+      },
     },
     {
       resolve: `gatsby-transformer-remark`,
@@ -80,20 +81,20 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 630
-            }
+              maxWidth: 630,
+            },
           },
           {
             resolve: `gatsby-remark-responsive-iframe`,
             options: {
-              wrapperStyle: `margin-bottom: 1.0725rem`
-            }
+              wrapperStyle: `margin-bottom: 1.0725rem`,
+            },
           },
           `gatsby-remark-prismjs`,
           `gatsby-remark-copy-linked-files`,
-          `gatsby-remark-smartypants`
-        ]
-      }
+          `gatsby-remark-smartypants`,
+        ],
+      },
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
@@ -121,7 +122,7 @@ module.exports = {
                   date: node.frontmatter.date,
                   url: site.siteMetadata.siteUrl + node.fields.slug,
                   guid: site.siteMetadata.siteUrl + node.fields.slug,
-                  custom_elements: [{ "content:encoded": node.html }]
+                  custom_elements: [{ "content:encoded": node.html }],
                 })
               })
             },
@@ -145,10 +146,10 @@ module.exports = {
               }
             `,
             output: "/rss.xml",
-            title: "Mattycakes Digital Garden RSS Feed"
-          }
-        ]
-      }
+            title: "Mattycakes Digital Garden RSS Feed",
+          },
+        ],
+      },
     },
     {
       resolve: `gatsby-plugin-manifest`,
@@ -162,8 +163,8 @@ module.exports = {
         theme_color: `#2e3440`,
         display: `standalone`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
-        theme_color_in_head: false // This will avoid adding theme-color meta tag, for dark/light mode.
-      }
-    }
-  ]
+        theme_color_in_head: false, // This will avoid adding theme-color meta tag, for dark/light mode.
+      },
+    },
+  ],
 }
