@@ -24,7 +24,7 @@ const BlogIndex = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <h1>Chinese Character Test: 潘怡暉</h1>
+      <p>Chinese Character Test: 潘怡暉</p>
       <Bio />
       <ol style={{ listStyle: `none` }}>
         {posts.map(post => {
@@ -48,7 +48,7 @@ const BlogIndex = ({ data, location }) => {
                 <section>
                   <p
                     dangerouslySetInnerHTML={{
-                      __html: post.frontmatter.description || post.excerpt,
+                      __html: post.frontmatter.description || post.excerpt
                     }}
                     itemProp="description"
                   />
