@@ -7,7 +7,6 @@ import React from "react"
 import { ReactKeycloakProvider } from "@react-keycloak/web"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faSpinner } from "@fortawesome/free-solid-svg-icons"
-import { Script } from "gatsby"
 
 /**
  * Initialization spinner component
