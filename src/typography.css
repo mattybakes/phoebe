@@ -1,8 +1,8 @@
 @font-face {
   font-family: "bely";
-  src: url("../fonts/bely/bely.woff2") format("woff2"),
-    url("../fonts/bely/bely.woff") format("woff"),
-    url("../fonts/bely/bely.otf") format("opentype");
+  src: url("./fonts/bely/bely.woff2") format("woff2"),
+    url("./fonts/bely/bely.woff") format("woff"),
+    url("./fonts/bely/bely.otf") format("opentype");
   font-display: swap;
   font-style: normal;
   font-weight: 400;
@@ -11,9 +11,9 @@
 
 @font-face {
   font-family: "bely";
-  src: url("../fonts/bely/belyItalic.woff2") format("woff2"),
-    url("../fonts/bely/belyItalic.woff") format("woff"),
-    url("../fonts/bely/belyItalic.otf") format("opentype");
+  src: url("./fonts/bely/belyItalic.woff2") format("woff2"),
+    url("./fonts/bely/belyItalic.woff") format("woff"),
+    url("./fonts/bely/belyItalic.otf") format("opentype");
   font-display: swap;
   font-style: italic;
   font-weight: 400;
@@ -22,9 +22,9 @@
 
 @font-face {
   font-family: "bely";
-  src: url("../fonts/bely/belyBold.woff2") format("woff2"),
-    url("../fonts/bely/belyBold.woff") format("woff"),
-    url("../fonts/bely/belyBold.otf") format("opentype");
+  src: url("./fonts/bely/belyBold.woff2") format("woff2"),
+    url("./fonts/bely/belyBold.woff") format("woff"),
+    url("./fonts/bely/belyBold.otf") format("opentype");
   font-display: swap;
   font-style: normal;
   font-weight: 700;
@@ -33,9 +33,9 @@
 
 @font-face {
   font-family: "bely";
-  src: url("../fonts/bely/belyBoldItalic.woff2") format("woff2"),
-    url("../fonts/bely/belyBoldItalic.woff") format("woff"),
-    url("../fonts/bely/belyBoldItalic.otf") format("opentype");
+  src: url("./fonts/bely/belyBoldItalic.woff2") format("woff2"),
+    url("./fonts/bely/belyBoldItalic.woff") format("woff"),
+    url("./fonts/bely/belyBoldItalic.otf") format("opentype");
   font-display: swap;
   font-style: italic;
   font-weight: 700;
