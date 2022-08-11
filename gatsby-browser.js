@@ -12,7 +12,10 @@ import keycloak from "./src/components/keycloak"
 // custom typefaces
 import "@fontsource/inter/variable.css"
 import "@fontsource/ibm-plex-mono"
-import "@fontsource/noto-sans-hk"
+import "@fontsource/noto-sans-hk/300.css"
+import "@fontsource/noto-sans-hk/400.css"
+import "@fontsource/noto-sans-hk/500.css"
+import "@fontsource/noto-sans-hk/700.css"
 // normalize CSS across browsers
 import "./src/normalize.css"
 // custom CSS styles
