@@ -15,8 +15,9 @@ import { DarkModeSwitch } from "react-toggle-dark-mode"
  * it.
  */
 const DarkModeToggle = () => {
-  const darkMode = useDarkMode(false, { 
-    element: "document.html"})
+  const darkMode = useDarkMode(false, {
+    element: "document.documentElement",
+  })
 
   return (
     <div className="">
