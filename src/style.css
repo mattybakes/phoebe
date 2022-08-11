@@ -43,7 +43,7 @@
   --spacing-24: 6rem;
   --spacing-32: 8rem;
   /* Font-Family System */
-  --fontFamily-sans: "InterVariable", "Noto Sans HK", system-ui, -apple-system,
+  --fontFamily-sans: "Inter", "Noto Sans HK", system-ui, -apple-system,
     BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
     sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
     "Noto Color Emoji";
