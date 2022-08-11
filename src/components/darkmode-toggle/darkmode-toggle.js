@@ -2,6 +2,7 @@
  * Dark Mode Toggle Component
  * Returns a toggle to switch between dark and light mode using use-dark-mode.
  * References: https://github.com/JoseRFelix/react-toggle-dark-mode,
+ *             https://github.com/donavon/use-dark-mode#parameters,
  *             https://www.gatsbyjs.com/plugins/gatsby-plugin-use-dark-mode/
  */
 
