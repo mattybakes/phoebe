@@ -27,11 +27,12 @@
   --spacing-20: 5rem;
   --spacing-24: 6rem;
   --spacing-32: 8rem;
-  --fontFamily-sans: "InterVariable", source-han-sans-simplified-c, system-ui,
+  --fontFamily-sans: "InterVariable", "source-han-sans-simplified-c", system-ui,
     -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
     Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
     "Segoe UI Symbol", "Noto Color Emoji";
-  --fontFamily-serif: bely, "Georgia", Cambria, "Times New Roman", Times, serif;
+  --fontFamily-serif: "bely", "Georgia", Cambria, "Times New Roman", Times,
+    serif;
   --fontFamily-mono: "IBM Plex Mono", monospace;
   --font-body: var(--fontFamily-sans);
   --font-heading: var(--fontFamily-serif);
