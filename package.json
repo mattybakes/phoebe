@@ -20,6 +20,7 @@
     "babel-eslint": "^10.1.0",
     "eslint": "^8.21.0",
     "gatsby": "^4.20.0",
+    "gatsby-omni-font-loader": "^2.0.2",
     "gatsby-plugin-feed": "^4.20.0",
     "gatsby-plugin-image": "^2.20.0",
     "gatsby-plugin-json-output": "^1.2.0",

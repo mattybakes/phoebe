@@ -14,6 +14,23 @@ module.exports = {
     siteUrl: `https://mattycakes.ca/`
   },
   plugins: [
+    {
+      resolve: "gatsby-omni-font-loader",
+      options: {
+        mode: "async",
+        /* Enable font loading listener to handle FOUT */
+        enableListener: true,
+        /* Self-hosted fonts config. Add font files and font CSS files to "static" folder */
+        custom: [
+          {
+            /* Exact name of the font as defied in @font-face CSS rule */
+            name: ["bely"],
+            /* Path to the font CSS file inside the "static" folder with @font-face definition */
+            file: "/typography.css",
+          },
+        ],
+      },
+    },
     `gatsby-plugin-sass`,
     {
       resolve: `gatsby-plugin-json-output`,
