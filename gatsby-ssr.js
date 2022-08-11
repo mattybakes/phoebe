@@ -7,6 +7,7 @@ import React from "react"
 import { ReactKeycloakProvider } from "@react-keycloak/web"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faSpinner } from "@fortawesome/free-solid-svg-icons"
+import { Script } from "gatsby"
 
 /**
  * Initialization spinner component
@@ -51,7 +52,8 @@ const HtmlAttributes = {
  * Set Adobe Typekit fonts in the Head
  */
 const HeadComponents = [
-  <script
+  <Script
+    id="source-han-sans"
     dangerouslySetInnerHTML={{
       __html: `
       (function(d) {
@@ -64,6 +66,7 @@ const HeadComponents = [
       })(document);
     `,
     }}
+    strategy="post-hydrate"
   />,
 ]
 
