@@ -10,9 +10,6 @@
   },
   "dependencies": {
     "@babel/core": "^7.18.10",
-    "@fontsource/ibm-plex-mono": "^4.5.11",
-    "@fontsource/inter": "^4.5.12",
-    "@fontsource/noto-sans-hk": "^4.5.11",
     "@fortawesome/fontawesome-svg-core": "^6.1.2",
     "@fortawesome/free-solid-svg-icons": "^6.1.2",
     "@fortawesome/react-fontawesome": "^0.2.0",
@@ -40,8 +37,6 @@
     "react-dom": "^18.1.0",
     "react-helmet": "^6.1.0",
     "sass": "^1.54.4",
-    "typeface-merriweather": "0.0.72",
-    "typeface-montserrat": "0.0.75",
     "typescript": "^4.7.4",
     "webpac": "^0.0.1-security",
     "webpack": "^5.74.0"

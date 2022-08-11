@@ -1,0 +1,12 @@
+/** 
+ * Colour Palette
+ * Inspired by the Nord, this theme was adapted and tint/shade shifted to 
+ * a calm seaside/forest palette.  Import using css @import statement in style.
+ * css.
+ * Reference: https://www.nordtheme.com
+ */
+
+:root {
+  /* Morning Sea Clouds */
+  --msc: #8fbcbb;
+}

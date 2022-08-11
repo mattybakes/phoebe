@@ -1,3 +1,9 @@
+/** 
+ * Typography Definitions
+ * @font face definitions for local custom fonts
+ * IMPORTANT: Use import statement in react for optimized loading 
+ */
+
 @font-face {
   font-family: "bely";
   src: url("./fonts/bely/bely.woff2") format("woff2"),

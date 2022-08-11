@@ -9,10 +9,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faSpinner } from "@fortawesome/free-solid-svg-icons"
 import keycloak from "./src/components/keycloak"
 
-// custom typefaces
-import "@fontsource/inter/variable.css"
-import "@fontsource/ibm-plex-mono"
-// import "@fontsource/noto-sans-hk"
 // normalize CSS across browsers
 import "./src/normalize.css"
 // custom CSS styles

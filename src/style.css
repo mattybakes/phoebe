@@ -1,6 +1,20 @@
-/* CSS Custom Properties Definitions */
+/** 
+ * Main stylesheet
+ * Boilerplated from gatsby-starter-blog and inspired by certain utility 
+ * classes from TailwindCSS and the accessibility concerns of Josh W. Comeau.
+ * References: https://github.com/gatsbyjs/gatsby-starter-blog, 
+ *             https://tailwindcss.com, https://www.joshwcomeau.com/
+ */
 
+/* Import external stylesheets */
+@import url("./palette.css");
+
+/**
+ * Setup Systems for styling, components should cascade their styling to these 
+ * variables.
+ */
 :root {
+  /* Max Width System */
   --maxWidth-none: "none";
   --maxWidth-xs: 20rem;
   --maxWidth-sm: 24rem;
@@ -12,6 +26,7 @@
   --maxWidth-4xl: 56rem;
   --maxWidth-full: "100%";
   --maxWidth-wrapper: var(--maxWidth-2xl);
+  /* Spacing System */
   --spacing-px: "1px";
   --spacing-0: 0;
   --spacing-1: 0.25rem;
@@ -27,6 +42,7 @@
   --spacing-20: 5rem;
   --spacing-24: 6rem;
   --spacing-32: 8rem;
+  /* Font-Family System */
   --fontFamily-sans: "InterVariable", "Noto Sans HK", system-ui, -apple-system,
     BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
     sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
@@ -36,6 +52,8 @@
   --fontFamily-mono: "IBM Plex Mono", monospace;
   --font-body: var(--fontFamily-sans);
   --font-heading: var(--fontFamily-serif);
+  --font-code: var(--fontFamily-mono);
+  /* Font weights */
   --fontWeight-normal: 400;
   --fontWeight-medium: 500;
   --fontWeight-semibold: 600;
@@ -44,19 +62,21 @@
   --fontWeight-black: 900;
   /* Leave as relative unit for accessibility */
   --fontSize-root: 100%;
+  /* Cadence and Rhythm is based on base line-height 1.75 */
   --lineHeight-none: 1;
-  --lineHeight-tight: 1.1;
-  --lineHeight-normal: 1.5;
-  --lineHeight-relaxed: 1.625;
-  /* 1.200 Minor Third Type Scale */
-  --fontSize-0: 0.833rem;
+  --lineHeight-tight: 1.25;
+  --lineHeight-relaxed: 1.5;
+  --lineHeight-normal: 1.75;
+  /* 1.333 Perfect Fourth Type Scale */
+  --fontSize-0: 0.875rem;
   --fontSize-1: 1rem;
-  --fontSize-2: 1.2rem;
-  --fontSize-3: 1.44rem;
-  --fontSize-4: 1.728rem;
-  --fontSize-5: 2.074rem;
-  --fontSize-6: 2.488rem;
-  --fontSize-7: 2.986rem;
+  --fontSize-2: 1.3125rem;
+  --fontSize-3: 1.75rem;
+  --fontSize-4: 2.375rem;
+  --fontSize-5: 3.1875rem;
+  --fontSize-6: 4.1875rem;
+  --fontSize-7: 5.625rem;
+  /* Colour System */
   --color-primary: #005b99;
   --color-text: #2e353f;
   --color-text-light: #4f5969;
@@ -65,7 +85,9 @@
   --color-accent: #d1dce5;
 }
 
-/* HTML elements */
+/**
+ * HTML Elements Style 
+ */
 
 *,
 :after,
