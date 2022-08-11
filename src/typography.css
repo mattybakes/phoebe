@@ -47,13 +47,3 @@
   font-weight: 700;
   font-stretch: normal;
 }
-
-@font-face {
-  font-family: "InterVariable";
-  src: url("./fonts/inter/interVar.woff2") format("woff2"),
-    url("./fonts/inter/interVar.ttf") format("truetype");
-  font-display: swap;
-  font-style: oblique 0deg 10deg;
-  font-weight: 100 1000;
-  font-stretch: 25% 151%;
-}
