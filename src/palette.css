@@ -6,11 +6,17 @@
  * Reference: https://www.nordtheme.com
  */
 
+/**
+ * Default: Light Mode 
+ */
 :root {
   /* Morning Sea Clouds */
   --msc: #8fbcbb;
 }
 
+/** 
+ * Dark Mode 
+ */
 :root.dark-mode {
   /* Morning Sea Clouds */
   --msc: #ffffff;
