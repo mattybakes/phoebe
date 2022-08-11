@@ -10,3 +10,8 @@
   /* Morning Sea Clouds */
   --msc: #8fbcbb;
 }
+
+:root.dark-mode {
+  /* Morning Sea Clouds */
+  --msc: #ffffff;
+}
