@@ -58,8 +58,6 @@
   --fontWeight-medium: 500;
   --fontWeight-semibold: 600;
   --fontWeight-bold: 700;
-  --fontWeight-extrabold: 800;
-  --fontWeight-black: 900;
   /* Leave as relative unit for accessibility */
   --fontSize-root: 100%;
   /* Cadence and Rhythm is based on base line-height 1.75 */
@@ -143,7 +141,7 @@ h6 {
 }
 
 h1 {
-  font-weight: var(--fontWeight-black);
+  font-weight: var(--fontWeight-bold);
   font-size: var(--fontSize-6);
   color: var(--color-heading-black);
 }
