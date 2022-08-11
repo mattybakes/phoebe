@@ -31,7 +31,7 @@
     BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
     sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
     "Noto Color Emoji";
-  --fontFamily-serif: "bely", "Georgia", Cambria, "Times New Roman", Times,
+  --fontFamily-serif: "bely", "Times New Roman", "Georgia", Cambria, Times,
     serif;
   --fontFamily-mono: "IBM Plex Mono", monospace;
   --font-body: var(--fontFamily-sans);
@@ -83,6 +83,23 @@ body {
   font-family: var(--font-body);
   font-size: var(--fontSize-1);
   color: var(--color-text);
+}
+
+body:not(.wf-bely) {
+  /* fallback font (Times New Roman), before bely loads */
+  font-family: "Times New Roman";
+  font-size: 16px;
+  word-spacing: 0.15px;
+  letter-spacing: -0.55px;
+  font-weight: 700;
+}
+
+.bely {
+  /* web font CSS config */
+  font-family: "Bely";
+  font-size: 16px;
+  letter-spacing: -0.03em;
+  font-weight: 700;
 }
 
 footer {
