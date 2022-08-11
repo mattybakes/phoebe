@@ -54,6 +54,7 @@ const HtmlAttributes = {
 const HeadComponents = [
   // Bely
   <link rel="preload" href="./src/typekit.css" />,
+  // Source Han Sans
   <Script
     id="typekit"
     dangerouslySetInnerHTML={{
