@@ -31,7 +31,7 @@ export const wrapRootElement = ({ element }) => {
     <ReactKeycloakProvider
       authClient={{}} //an empty object instead of the keycloak instance for the static HTML pages
       initOptions={{
-        onLoad: "login-required"
+        onLoad: "login-required",
       }}
       LoadingComponent={<Loading />}
     >
@@ -44,13 +44,28 @@ export const wrapRootElement = ({ element }) => {
  * Set HTML lang field to en for accessibility (readers)
  */
 const HtmlAttributes = {
-  lang: "en"
+  lang: "en",
 }
 
 /**
  * Set Adobe Typekit fonts in the Head
  */
-const HeadComponents = []
+const HeadComponents = [
+  <script
+    dangerouslySetInnerHTML={{
+      __html: `
+      (function(d) {
+        var config = {
+          kitId: 'ysu4ixp',
+          scriptTimeout: 3000,
+          async: true
+        },
+        h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+      })(document);
+    `,
+    }}
+  />,
+]
 
 /**
  * Called after every page Gatsby server renders while building HTML so you can
