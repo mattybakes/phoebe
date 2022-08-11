@@ -56,7 +56,7 @@ const HeadComponents = [
   <link rel="preload" href="https://use.typekit.net/dsn0wzu.css" />,
   // Source Han Sans
   <Script
-    id="typekit"
+    id="tp-import"
     dangerouslySetInnerHTML={{
       __html: `
         (function(d) {
