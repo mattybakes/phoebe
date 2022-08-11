@@ -24,7 +24,6 @@ const BlogIndex = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <p>潘怡暉</p>
       <Bio />
       <ol style={{ listStyle: `none` }}>
         {posts.map(post => {
