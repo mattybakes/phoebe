@@ -17,6 +17,8 @@ import "@fontsource/ibm-plex-mono"
 import "./src/normalize.css"
 // custom CSS styles
 import "./src/style.css"
+// @font face definitions for local fonts Bely
+import "./src/typography.css"
 // Highlighting for code blocks
 import("./src/prismjs/nord-light.scss")
 import("./src/prismjs/nord-dark.scss")
