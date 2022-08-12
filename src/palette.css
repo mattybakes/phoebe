@@ -71,7 +71,7 @@
   --color-primary: var(--msc500);
   --color-text: var(--eb500);
   --color-text-muted: var(--eb300);
-  --color-accent: #d1dce5;
+  --color-body: var(--msc050);
 }
 
 /** 
@@ -80,4 +80,5 @@
 :root.dark-mode {
   --color-text: var(--eb050);
   --color-text-muted: var(--eb200);
+  --color-body: var(--msc800);
 }
