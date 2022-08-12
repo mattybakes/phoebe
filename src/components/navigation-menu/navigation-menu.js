@@ -1,3 +1,9 @@
+/**
+ * Navigation Menu Component
+ * Returns a responsive navigation menu to be used in layout.js
+ * References: https://tailwindui.com/
+ */
+
 import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import { Fragment } from "react"
