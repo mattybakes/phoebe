@@ -2,7 +2,6 @@
  * Navigation Menu Component
  * Returns a responsive navigation menu to be used in layout.js
  * References: https://tailwindui.com/,
- *             https://www.devtwins.com/blog/sticky-navbar-hides-scroll
  */
 
 import React from "react"
@@ -17,6 +16,8 @@ import Icon from "./logo.inline.svg"
 import DarkToggle from "../darkmode-toggle"
 import { debounce } from "../../helpers/debounce"
 import "./navigation-menu.scss"
+import "../../animation/scale-down-top-50.css"
+import "../../animation/scale-up-top-50.css"
 
 // Links that are available to unauthenticated users
 const navigationPublic = [
@@ -42,37 +43,13 @@ function classNames(...classes) {
  */
 
 export default function Navbar() {
-  /* AutoHide Nav Menu Feature */
-  const [prevScrollPos, setPrevScrollPos] = useState(0)
-  const [visible, setVisible] = useState(true)
-  // const to store calculations limited by the debounce helper to 25 ms
-  const handleScroll = debounce(() => {
-    const currentScrollPos = window.pageYOffset
-    // function to calculate whether to hide or show
-    setVisible(
-      (prevScrollPos > currentScrollPos &&
-        prevScrollPos - currentScrollPos > 50) ||
-        currentScrollPos < 10
-    )
-    // stores previous position for future calculations
-    setPrevScrollPos(currentScrollPos)
-  }, 100)
-  // useEffect function to handle window event listeners for scroll position
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll)
-    // cleanup function
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [prevScrollPos, visible, handleScroll])
-  // styling for transition
-  const navbarStyles = {
-    transition: "top 0.5s",
-  }
-
+  /* Autoshrink Nav Menu Feature */
   const [isShrunk, setShrunk] = useState(false)
-
+  // useEffect function to handle document event
   useEffect(() => {
-    const handler = () => {
+    const handler = debounce(() => {
       setShrunk(isShrunk => {
+        // logic implementation
         if (
           !isShrunk &&
           (document.body.scrollTop > 20 ||
@@ -91,8 +68,8 @@ export default function Navbar() {
 
         return isShrunk
       })
-    }
-
+    }, 25)
+    // cleanup
     window.addEventListener("scroll", handler)
     return () => window.removeEventListener("scroll", handler)
   }, [])
@@ -114,14 +91,13 @@ export default function Navbar() {
     <Disclosure
       as="nav"
       className={
-        "navigation-menu sticky top-0 z-10 w-full" +
-        { isShrunk: true ? "shrunk" : "unshrunk" }
+        "navigation-menu sticky top-0 z-10 w-full " +
+        (isShrunk ? "scale-down-ver-top" : "scale-up-ver-top")
       }
-      style={{ ...navbarStyles, top: visible ? "0" : "-9rem" }}
     >
       {({ open }) => (
         <>
-          <div className="mx-auto px-2 sm:px-12 lg:px-16 my-auto py-8">
+          <div className="mx-auto">
             <div className="relative flex items-center justify-between h-16">
               <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                 {/* Mobile menu button*/}
@@ -250,6 +226,7 @@ export default function Navbar() {
             </div>
           </div>
 
+          {/* Mobile Menu Dropdown */}
           <Disclosure.Panel className="sm:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1">
               {keycloak &&

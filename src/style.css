@@ -30,7 +30,7 @@
   --maxWidth-7xl: 80rem;
   --maxWidth-8xl: 96rem;
   --maxWidth-full: "100%";
-  --maxWidth-wrapper: 1536px;
+  --maxWidth-wrapper: 1920px;
   /* Spacing System */
   --spacing-px: "1px";
   --spacing-0: 0;
@@ -261,6 +261,7 @@ a:focus {
 /* Custom classes */
 
 .global-wrapper {
+  margin: auto;
   max-width: var(--maxWidth-wrapper);
 }
 
