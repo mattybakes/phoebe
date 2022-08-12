@@ -1,11 +1,12 @@
 /**
  * Navigation Menu Component
  * Returns a responsive navigation menu to be used in layout.js
- * References: https://tailwindui.com/
+ * References: https://tailwindui.com/,
+ *             https://www.devtwins.com/blog/sticky-navbar-hides-scroll
  */
 
 import React from "react"
-import { Fragment } from "react"
+import { useState, useEffect, Fragment } from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import { Disclosure, Menu, Transition } from "@headlessui/react"
 import { MenuIcon, XIcon } from "@heroicons/react/outline"
@@ -14,7 +15,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faUserAstronaut, faLock } from "@fortawesome/free-solid-svg-icons"
 import Icon from "./logo.inline.svg"
 import DarkToggle from "../darkmode-toggle"
-import { useScroll } from "./navigation-menu-scroll"
+import { debounce } from "../../helpers/debounce"
 import "./navigation-menu.scss"
 
 // Links that are available to unauthenticated users
@@ -36,21 +37,67 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ")
 }
 
-export default function Navbar() {
-  const { y, x, scrollDirection } = useScroll()
+/**
+ * Navigation Menu Function
+ */
 
-  const styles = {
-    active: {
-      visibility: "visible",
-      transition: "all 0.5s",
-    },
-    hidden: {
-      visibility: "hidden",
-      transition: "all 0.5s",
-      transform: "translateY(-100%)",
-    },
+export default function Navbar() {
+  /* AutoHide Nav Menu Feature */
+  const [prevScrollPos, setPrevScrollPos] = useState(0)
+  const [visible, setVisible] = useState(true)
+  // const to store calculations limited by the debounce helper to 25 ms
+  const handleScroll = debounce(() => {
+    const currentScrollPos = window.pageYOffset
+    // function to calculate whether to hide or show
+    setVisible(
+      (prevScrollPos > currentScrollPos &&
+        prevScrollPos - currentScrollPos > 50) ||
+        currentScrollPos < 10
+    )
+    // stores previous position for future calculations
+    setPrevScrollPos(currentScrollPos)
+  }, 100)
+  // useEffect function to handle window event listeners for scroll position
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll)
+    // cleanup function
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [prevScrollPos, visible, handleScroll])
+  // styling for transition
+  const navbarStyles = {
+    transition: "top 0.5s",
   }
 
+  const [isShrunk, setShrunk] = useState(false)
+
+  useEffect(() => {
+    const handler = () => {
+      setShrunk(isShrunk => {
+        if (
+          !isShrunk &&
+          (document.body.scrollTop > 20 ||
+            document.documentElement.scrollTop > 20)
+        ) {
+          return true
+        }
+
+        if (
+          isShrunk &&
+          document.body.scrollTop < 4 &&
+          document.documentElement.scrollTop < 4
+        ) {
+          return false
+        }
+
+        return isShrunk
+      })
+    }
+
+    window.addEventListener("scroll", handler)
+    return () => window.removeEventListener("scroll", handler)
+  }, [])
+
+  /* Required Keycloak client object to check authenticaiton */
   const { keycloak, initialized } = useKeycloak()
 
   const query = useStaticQuery(graphql`
@@ -66,8 +113,11 @@ export default function Navbar() {
   return (
     <Disclosure
       as="nav"
-      className="nav sticky top-0 z-10 w-full"
-      style={scrollDirection === "down" ? styles.active : styles.hidden}
+      className={
+        "navigation-menu sticky top-0 z-10 w-full" +
+        { isShrunk: true ? "shrunk" : "unshrunk" }
+      }
+      style={{ ...navbarStyles, top: visible ? "0" : "-9rem" }}
     >
       {({ open }) => (
         <>
