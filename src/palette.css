@@ -7,17 +7,77 @@
  */
 
 /**
- * Default: Light Mode 
+ * Theme Colours
  */
 :root {
   /* Morning Sea Clouds */
-  --msc: #8fbcbb;
+  --msc050: #f4f8f8;
+  --msc100: #e9f2f1;
+  --msc200: #d3e4e4;
+  --msc300: #bcd7d6;
+  --msc400: #a5c9c9;
+  --msc500: #8fbcbb;
+  --msc600: #729696;
+  --msc700: #567170;
+  --msc800: #394b4b;
+  --msc900: #1d2625;
+  --msc950: #0e1313;
+  /* East Bay */
+  --eb050: #edeef0;
+  --eb100: #dbdde1;
+  --eb200: #b7bbc3;
+  --eb300: #949aa6;
+  --eb400: #707888;
+  --eb500: #4c566a;
+  --eb600: #3d4555;
+  --eb700: #2e3440;
+  --eb800: #1e222a;
+  --eb900: #0f1115;
+  --eb950: #08090b;
+  /* Contessa */
+  --con400: #cc8188;
+  --con500: #bf616a;
+  --con600: #994e55;
+  /* Feldspar */
+  --fel400: #d99f8d;
+  --fel500: #d08770;
+  --fel600: #a66c5a;
+  /* Marzipan */
+  -mar400: #efd5a2;
+  -mar500: #ebcb8b;
+  -mar600: #bca26f;
+  /* Norway */
+  --nor400: #b5cba3;
+  --nor500: #a3be8c;
+  --nor600: #829870;
+  /* London Hue */
+  --lh400: #c3a5bd;
+  --lh500: #b48ead;
+  --lh600: #90728a;
+  /* Seagull */
+  --sgl400: #a0cdd9;
+  --sgl500: #88c0d0;
+  --sgl600: #6d9aa6;
+  /* Polo */
+  --pb400: #9ab4cd;
+  --pb500: #81a1c1;
+  --pb600: #67819a;
+}
+
+/** 
+ * Default: Light Mode 
+ */
+:root {
+  --color-primary: var(--msc500);
+  --color-text: var(--eb500);
+  --color-text-muted: var(--eb300);
+  --color-accent: #d1dce5;
 }
 
 /** 
  * Dark Mode 
  */
 :root.dark-mode {
-  /* Morning Sea Clouds */
-  --msc: #ffffff;
+  --color-text: var(--eb050);
+  --color-text-muted: var(--eb200);
 }

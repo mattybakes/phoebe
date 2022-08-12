@@ -74,13 +74,6 @@
   --fontSize-5: 3.1875rem;
   --fontSize-6: 4.1875rem;
   --fontSize-7: 5.625rem;
-  /* Colour System */
-  --color-primary: #005b99;
-  --color-text: var(--msc);
-  --color-text-light: #4f5969;
-  --color-heading: #1a202c;
-  --color-heading-black: black;
-  --color-accent: #d1dce5;
 }
 
 /**
@@ -137,13 +130,11 @@ h4,
 h5,
 h6 {
   font-weight: var(--fontWeight-bold);
-  color: var(--color-heading);
 }
 
 h1 {
   font-weight: var(--fontWeight-bold);
   font-size: var(--fontSize-6);
-  color: var(--color-heading-black);
 }
 
 h2 {
@@ -220,7 +211,7 @@ li > ul {
 }
 
 blockquote {
-  color: var(--color-text-light);
+  color: var(--color-text-muted);
   margin-left: calc(-1 * var(--spacing-6));
   margin-right: var(--spacing-8);
   padding: var(--spacing-0) var(--spacing-0) var(--spacing-0) var(--spacing-6);
