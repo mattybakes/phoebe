@@ -51,7 +51,7 @@ const HtmlAttributes = {
  * Set Adobe Typekit fonts in the Head
  */
 const HeadComponents = [
-  <link rel="dns-prefetch" href="https://keycloak.mattycakes.ca" />,
+  <link rel="preconnect" href="https://keycloak.mattycakes.ca" />,
 ]
 
 /**

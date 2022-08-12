@@ -5,8 +5,8 @@
  */
 
 import React from "react"
-import { Link, useStaticQuery, graphql } from "gatsby"
 import { Fragment } from "react"
+import { Link, useStaticQuery, graphql } from "gatsby"
 import { Disclosure, Menu, Transition } from "@headlessui/react"
 import { MenuIcon, XIcon } from "@heroicons/react/outline"
 import { useKeycloak } from "@react-keycloak/web"
