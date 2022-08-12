@@ -14,6 +14,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faUserAstronaut, faLock } from "@fortawesome/free-solid-svg-icons"
 import Icon from "./logo.inline.svg"
 import DarkToggle from "../darkmode-toggle"
+import { useScroll } from "./navigation-menu-scroll"
 import "./navigation-menu.scss"
 
 // Links that are available to unauthenticated users
@@ -30,12 +31,26 @@ const navigationPrivate = [
   { name: "ramblings", href: "/ramblings", current: false },
 ]
 
-// Function to join class names
+// Function to join class names (unsure if this is redundant?)
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ")
 }
 
 export default function Navbar() {
+  const { y, x, scrollDirection } = useScroll()
+
+  const styles = {
+    active: {
+      visibility: "visible",
+      transition: "all 0.5s",
+    },
+    hidden: {
+      visibility: "hidden",
+      transition: "all 0.5s",
+      transform: "translateY(-100%)",
+    },
+  }
+
   const { keycloak, initialized } = useKeycloak()
 
   const query = useStaticQuery(graphql`
@@ -49,7 +64,11 @@ export default function Navbar() {
   `)
 
   return (
-    <Disclosure as="nav" className="nav sticky top-0 z-10 w-full backdrop-blur">
+    <Disclosure
+      as="nav"
+      className="nav sticky top-0 z-10 w-full"
+      style={scrollDirection === "down" ? styles.active : styles.hidden}
+    >
       {({ open }) => (
         <>
           <div className="mx-auto px-2 sm:px-12 lg:px-16 my-auto py-8">
