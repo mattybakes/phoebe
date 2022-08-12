@@ -16,10 +16,13 @@ import Icon from "./logo.inline.svg"
 import DarkToggle from "../darkmode-toggle"
 import "./navigation-menu.scss"
 
+// Links that are available to unauthenticated users
 const navigationPublic = [
   { name: "personal", href: "/personal", current: false },
   { name: "ramblings", href: "/ramblings", current: false },
 ]
+
+// Links that are available ONLY to authenticated users
 const navigationPrivate = [
   { name: "academic", href: "/academic", current: false },
   { name: "journal", href: "/journal", current: false },
@@ -27,6 +30,7 @@ const navigationPrivate = [
   { name: "ramblings", href: "/ramblings", current: false },
 ]
 
+// Function to join class names
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ")
 }
@@ -65,16 +69,10 @@ export default function Navbar() {
               <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex-shrink-0 flex items-center">
                   <Link to="/" className="flex">
-                    <Icon className="block md:hidden h-6 w-auto my-auto brand-logo" />
                     <Icon className="hidden md:block h-6 w-auto my-auto brand-logo" />
-                    <div className="site-title my-auto">
-                      <span className="title hidden md:block px-1 py-0 font-bold text-lg leading-4">
-                        {query.site.siteMetadata.title}
-                      </span>
-                      <span className="subtitle hidden md:block px-1 py-0 font-semibold text-xxs tracking-tight">
-                        {query.site.siteMetadata.subtitle}
-                      </span>
-                    </div>
+                    <span className="title hidden md:block px-1 py-0 font-bold text-lg leading-4">
+                      {query.site.siteMetadata.title}
+                    </span>
                   </Link>
                 </div>
               </div>
