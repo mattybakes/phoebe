@@ -1,3 +1,9 @@
+/** 
+ * Tailwind
+ * Imports base, components, and utility css from TailwindCSS and PostCSS.
+ * References: https://tailwindcss.com/docs/guides/gatsby
+ */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
