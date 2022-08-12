@@ -21,6 +21,8 @@ import "./src/normalize.css"
 import "./src/style.css"
 // @font face definitions for local fonts Bely
 import "./src/typography.css"
+// TailwindCSS
+import "./src/tailwind.css"
 // Highlighting for code blocks
 import("./src/prismjs/nord-light.scss")
 import("./src/prismjs/nord-dark.scss")

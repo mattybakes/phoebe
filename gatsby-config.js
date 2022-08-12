@@ -14,7 +14,8 @@ module.exports = {
     siteUrl: `https://mattycakes.ca/`,
   },
   plugins: [
-    "gatsby-plugin-use-dark-mode",
+    `gatsby-plugin-postcss`,
+    `gatsby-plugin-use-dark-mode`,
     `gatsby-plugin-sass`,
     {
       resolve: `gatsby-plugin-json-output`,
