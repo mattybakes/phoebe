@@ -18,12 +18,17 @@ const DarkModeToggle = () => {
   const darkMode = useDarkMode(false, {
     onChange: state => {
       const htmlElement = document.documentElement
+      const bodyElement = document.body
       if (state) {
-        htmlElement.classList.add("dark")
-        htmlElement.classList.remove("light")
+        htmlElement.classList.add("dark-mode")
+        htmlElement.classList.remove("light-mode")
+        bodyElement.classList.add("dark-mode")
+        bodyElement.classList.remove("light-mode")
       } else {
-        htmlElement.classList.add("light")
-        htmlElement.classList.remove("dark")
+        htmlElement.classList.add("dark-mode")
+        htmlElement.classList.remove("light-mode")
+        bodyElement.classList.add("dark-mode")
+        bodyElement.classList.remove("light-mode")
       }
     },
   })
