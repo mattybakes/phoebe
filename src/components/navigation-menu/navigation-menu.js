@@ -16,6 +16,7 @@ import Logo from "./logo.inline.svg"
 import DarkToggle from "../darkmode-toggle"
 import { debounce } from "../../helpers/debounce"
 import "./navigation-menu.scss"
+import "../../animations/color-change-text.scss"
 
 // Links that are available to unauthenticated users
 const navigationPublic = [
@@ -119,7 +120,7 @@ export default function Navbar() {
                         to={item.href}
                         className={classNames(
                           "nav-item",
-                          "rounded-md text-sm font-medium"
+                          "rounded-md text-sm font-medium font-color-normal"
                         )}
                         activeClassName="active-nav-item"
                       >
@@ -133,7 +134,7 @@ export default function Navbar() {
                         to={item.href}
                         className={classNames(
                           "nav-item",
-                          "rounded-md text-sm font-medium"
+                          "rounded-md text-sm font-medium color-change-text hover:color-change-text-hover"
                         )}
                         activeClassName="active-nav-item"
                       >

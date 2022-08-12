@@ -365,3 +365,6 @@ a:focus {
   font-size: 0.875rem;
   line-height: 2;
 }
+.font-color-normal {
+  color: var(--color-text);
+}

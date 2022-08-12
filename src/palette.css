@@ -71,6 +71,8 @@
   --color-primary: var(--msc500);
   --color-text: var(--eb500);
   --color-text-muted: var(--eb300);
+  --color-text-accent: var(--sgl500);
+  --color-text-link: var(--msc500);
   --color-body: var(--msc050);
 }
 

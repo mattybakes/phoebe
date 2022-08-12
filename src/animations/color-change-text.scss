@@ -1,0 +1,54 @@
+/**
+ * Colour Change Text Animation
+ * Changes the colour using an easeInQuad timing-function.
+ * References: https://animista.net
+ */
+
+.color-change-text {
+  -webkit-animation: color-change-text 0.25s
+    cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+  animation: color-change-text 0.25s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+}
+
+@-webkit-keyframes color-change-text {
+  0% {
+    color: var(--color-text-accent);
+  }
+  100% {
+    color: var(--color-text);
+  }
+}
+
+@keyframes color-change-text {
+  0% {
+    color: var(--color-text-accent);
+  }
+  100% {
+    color: var(--color-text);
+  }
+}
+
+.color-change-text:hover {
+  -webkit-animation: color-change-text-hover 0.25s
+    cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+  animation: color-change-text-hover 0.25s cubic-bezier(0.55, 0.085, 0.68, 0.53)
+    both;
+}
+
+@-webkit-keyframes color-change-text-hover {
+  0% {
+    color: var(--color-text);
+  }
+  100% {
+    color: var(--color-text-accent);
+  }
+}
+
+@keyframes color-change-text-hover {
+  0% {
+    color: var(--color-text);
+  }
+  100% {
+    color: var(--color-text-accent);
+  }
+}
