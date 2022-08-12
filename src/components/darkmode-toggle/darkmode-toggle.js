@@ -25,10 +25,10 @@ const DarkModeToggle = () => {
         bodyElement.classList.add("dark-mode")
         bodyElement.classList.remove("light-mode")
       } else {
-        htmlElement.classList.add("dark-mode")
-        htmlElement.classList.remove("light-mode")
-        bodyElement.classList.add("dark-mode")
-        bodyElement.classList.remove("light-mode")
+        htmlElement.classList.add("light-mode")
+        htmlElement.classList.remove("dark-mode")
+        bodyElement.classList.add("light-mode")
+        bodyElement.classList.remove("dark-mode")
       }
     },
   })
