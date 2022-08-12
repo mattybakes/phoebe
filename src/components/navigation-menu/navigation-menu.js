@@ -43,7 +43,6 @@ export default function Navbar() {
       site {
         siteMetadata {
           title
-          subtitle
         }
       }
     }
