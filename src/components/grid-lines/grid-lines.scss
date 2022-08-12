@@ -5,9 +5,32 @@
   height: 100%;
   width: 100%;
   margin: 0;
+  z-index: 9999;
 }
-.grid-lines {
-  background-image: repeating-linear-gradient(#ccc 0 1px, transparent 1px 100%),
-    repeating-linear-gradient(90deg, #ccc 0 1px, transparent 1px 100%);
-  background-size: 71px 71px;
+.grid-lines-main {
+  opacity: 0.25;
+  background-image: repeating-linear-gradient(
+      #8fbcbb 0 1px,
+      transparent 1px 100%
+    ),
+    repeating-linear-gradient(90deg, #8fbcbb 0 1px, transparent 1px 100%);
+  background-size: 1.75rem 1.75rem;
+}
+.grid-lines-4dp {
+  opacity: 0.25;
+  background-image: repeating-linear-gradient(
+      #8fbcbb 0 1px,
+      transparent 1px 100%
+    ),
+    repeating-linear-gradient(90deg, #8fbcbb 0 1px, transparent 1px 100%);
+  background-size: 0.25rem 0.25rem;
+}
+.grid-lines-8dp {
+  opacity: 0.25;
+  background-image: repeating-linear-gradient(
+      #8fbcbb 0 1px,
+      transparent 1px 100%
+    ),
+    repeating-linear-gradient(90deg, #8fbcbb 0 1px, transparent 1px 100%);
+  background-size: 0.5rem 0.5rem;
 }

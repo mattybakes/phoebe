@@ -11,7 +11,10 @@ const GridLines = ({ className }) => {
   return (
     <div className={`${className}`}>
       <div className="grid">
-        <div className="gridlines"></div>
+        <div className="grid-lines-main"></div>
+      </div>
+      <div className="grid">
+        <div className="grid-lines-4dp"></div>
       </div>
     </div>
   )

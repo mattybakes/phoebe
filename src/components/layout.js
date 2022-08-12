@@ -1,5 +1,6 @@
 import * as React from "react"
 import NavigationMenu from "./navigation-menu"
+import GridLines from "./grid-lines"
 
 const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`

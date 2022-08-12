@@ -17,12 +17,12 @@ import "@fontsource/inter/700.css"
 import "@fontsource/ibm-plex-mono"
 // normalize CSS across browsers
 import "./src/normalize.css"
+// TailwindCSS
+import "./src/tailwind.css"
 // custom CSS styles
 import "./src/style.css"
 // @font face definitions for local fonts Bely
 import "./src/typography.css"
-// TailwindCSS
-import "./src/tailwind.css"
 // Highlighting for code blocks
 import("./src/prismjs/nord-light.scss")
 import("./src/prismjs/nord-dark.scss")

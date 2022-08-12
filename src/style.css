@@ -43,6 +43,7 @@
   --spacing-8: 2rem;
   --spacing-10: 2.5rem;
   --spacing-12: 3rem;
+  --spacing-14: 3.5rem;
   --spacing-16: 4rem;
   --spacing-20: 5rem;
   --spacing-24: 6rem;
@@ -99,6 +100,7 @@ html {
 }
 
 body {
+  line-height: var(--lineHeight-normal);
   font-family: var(--font-body);
   font-size: var(--fontSize-1);
   color: var(--color-text);
@@ -263,6 +265,7 @@ a:focus {
 .global-wrapper {
   margin: auto;
   max-width: var(--maxWidth-wrapper);
+  padding: 0 var(--spacing-14);
 }
 
 .global-wrapper[data-is-root-path="true"] .bio {
@@ -357,4 +360,8 @@ a:focus {
 
 .max-w-8xl {
   max-width: 96rem; /* 1536px */
+}
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 2;
 }
