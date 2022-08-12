@@ -50,7 +50,9 @@ const HtmlAttributes = {
 /**
  * Set Adobe Typekit fonts in the Head
  */
-const HeadComponents = []
+const HeadComponents = [
+  <link rel="preconnect" href="https://keycloak.mattycakes.ca" />,
+]
 
 /**
  * Called after every page Gatsby server renders while building HTML so you can
