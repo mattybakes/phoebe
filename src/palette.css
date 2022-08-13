@@ -43,9 +43,9 @@
   --fel500: #d08770;
   --fel600: #a66c5a;
   /* Marzipan */
-  -mar400: #efd5a2;
-  -mar500: #ebcb8b;
-  -mar600: #bca26f;
+  --mar400: #efd5a2;
+  --mar500: #ebcb8b;
+  --mar600: #bca26f;
   /* Norway */
   --nor400: #b5cba3;
   --nor500: #a3be8c;
@@ -69,6 +69,7 @@
  */
 :root {
   --color-primary: var(--msc500);
+  --color-yellow: var(--mar500);
   --color-text: var(--eb500);
   --color-text-muted: var(--eb300);
   --color-text-accent: var(--sgl500);

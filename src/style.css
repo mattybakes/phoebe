@@ -37,9 +37,11 @@
   --spacing-1: 0.25rem;
   --spacing-2: 0.5rem;
   --spacing-3: 0.75rem;
+  --spacing-3-5: 0.875rem;
   --spacing-4: 1rem;
   --spacing-5: 1.25rem;
   --spacing-6: 1.5rem;
+  --spacing-7: 1.75rem;
   --spacing-8: 2rem;
   --spacing-10: 2.5rem;
   --spacing-12: 3rem;
@@ -265,7 +267,6 @@ a:focus {
 .global-wrapper {
   margin: auto;
   max-width: var(--maxWidth-wrapper);
-  padding: 0 var(--spacing-14);
 }
 
 .global-wrapper[data-is-root-path="true"] .bio {

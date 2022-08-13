@@ -13,6 +13,7 @@ import { useKeycloak } from "@react-keycloak/web"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faUserAstronaut, faLock } from "@fortawesome/free-solid-svg-icons"
 import Logo from "./logo.inline.svg"
+import ChineseLogo from "./logo.chinese.inline.svg"
 import DarkToggle from "../darkmode-toggle"
 import { debounce } from "../../helpers/debounce"
 import "./navigation-menu.scss"
@@ -87,7 +88,7 @@ export default function Navbar() {
       {({ open }) => (
         <>
           <div className="relative flex items-center justify-between">
-            <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
+            <div className="inset-y-0 left-0 flex items-center sm:hidden">
               {/* Mobile menu button*/}
               <Disclosure.Button className="mobile-nav-button inline-flex items-center justify-center p-2 rounded-md hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                 <span className="sr-only">Open main menu</span>
@@ -103,46 +104,64 @@ export default function Navbar() {
                 <Link to="/" className="flex">
                   <Logo
                     className={
-                      "hidden sm:block my-auto " +
+                      "logo hidden sm:block my-auto " +
                       (isShrunk ? "scale-down-h-top" : "scale-up-h-top")
+                    }
+                  />
+                  <ChineseLogo
+                    className={
+                      "chinese-logo hidden sm:block my-auto pt-[0.25rem] ml-7 " +
+                      (isShrunk ? "scale-down-logo" : "scale-up-logo")
                     }
                   />
                 </Link>
               </div>
-            </div>
-            <div className="absolute inset-y-0 right-0 flex items-center">
-              <div className="hidden sm:block sm:ml-6">
-                <div className="flex space-x-4">
+              <div className="hidden sm:flex sm:ml-7 items-center">
+                <div className="flex space-x-7">
                   {keycloak &&
                     keycloak.hasResourceRole("viewers") &&
                     navigationPrivate.map(item => (
-                      <Link
-                        to={item.href}
-                        className={classNames(
-                          "nav-item",
-                          "rounded-md text-sm font-medium font-color-normal"
-                        )}
-                        activeClassName="active-nav-item"
+                      <span
+                        className={
+                          isShrunk ? "scale-down-font" : "scale-up-font"
+                        }
                       >
-                        {item.name}
-                      </Link>
+                        <Link
+                          to={item.href}
+                          className={classNames(
+                            "nav-item",
+                            "rounded-md font-medium color-change-text hover:color-change-text-hover "
+                          )}
+                          activeClassName="active-nav-item"
+                        >
+                          {item.name}
+                        </Link>
+                      </span>
                     ))}
                   {keycloak &&
                     !keycloak.authenticated &&
                     navigationPublic.map(item => (
-                      <Link
-                        to={item.href}
-                        className={classNames(
-                          "nav-item",
-                          "rounded-md text-sm font-medium color-change-text hover:color-change-text-hover"
-                        )}
-                        activeClassName="active-nav-item"
+                      <span
+                        className={
+                          isShrunk ? "scale-down-font" : "scale-up-font"
+                        }
                       >
-                        {item.name}
-                      </Link>
+                        <Link
+                          to={item.href}
+                          className={classNames(
+                            "nav-item",
+                            "rounded-md font-medium color-change-text hover:color-change-text-hover "
+                          )}
+                          activeClassName="active-nav-item"
+                        >
+                          {item.name}
+                        </Link>
+                      </span>
                     ))}
                 </div>
               </div>
+            </div>
+            <div className="absolute inset-y-0 right-0 flex items-center">
               {/* Dark Mode Toggle */}
               <DarkToggle />
               {/* Profile dropdown */}

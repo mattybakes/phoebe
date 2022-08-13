@@ -7,7 +7,8 @@ const Layout = ({ location, title, children }) => {
   const isRootPath = location.pathname === rootPath
 
   return (
-    <div className="global-wrapper" data-is-root-path={isRootPath}>
+    <div className="global-wrapper px-7" data-is-root-path={isRootPath}>
+      <GridLines />
       <NavigationMenu />
       <main>
         <div className="">{children}</div>

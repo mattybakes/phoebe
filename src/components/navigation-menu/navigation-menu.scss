@@ -6,6 +6,24 @@
   background-color: var(--color-body);
 }
 
+.dark-mode .chinese-logo {
+  .light {
+    fill: var(--color-text);
+  }
+  .dark {
+    fill: var(--color-primary);
+  }
+}
+
+.light-mode .chinese-logo {
+  .light {
+    fill: var(--color-primary);
+  }
+  .dark {
+    fill: var(--color-text);
+  }
+}
+
 /** 
  * Navigation Specific Animations
  */
@@ -107,5 +125,105 @@
   }
   100% {
     padding: 1.75rem 0;
+  }
+}
+
+/* Animation scale-up-font */
+
+.scale-up-font {
+  -webkit-animation: scale-up-font 0.25s cubic-bezier(0.55, 0.085, 0.68, 0.53)
+    both;
+  animation: scale-up-font 0.25s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+}
+
+@-webkit-keyframes scale-up-font {
+  0% {
+    font-size: var(--fontSize-0);
+  }
+  100% {
+    font-size: var(--fontSize-1);
+  }
+}
+@keyframes scale-up-font {
+  0% {
+    font-size: var(--fontSize-0);
+  }
+  100% {
+    font-size: var(--fontSize-1);
+  }
+}
+
+/* Animation scale-down-font */
+
+.scale-down-font {
+  -webkit-animation: scale-down-font 0.25s cubic-bezier(0.55, 0.085, 0.68, 0.53)
+    both;
+  animation: scale-down-font 0.25s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+}
+
+@-webkit-keyframes scale-down-font {
+  0% {
+    font-size: var(--fontSize-1);
+  }
+  100% {
+    font-size: var(--fontSize-0);
+  }
+}
+@keyframes scale-down-font {
+  0% {
+    font-size: var(--fontSize-1);
+  }
+  100% {
+    font-size: var(--fontSize-0);
+  }
+}
+
+/* Animation scale-down-logo */
+
+.scale-down-logo {
+  -webkit-animation: scale-down-logo 0.25s cubic-bezier(0.55, 0.085, 0.68, 0.53)
+    both;
+  animation: scale-down-logo 0.25s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+}
+
+@-webkit-keyframes scale-down-logo {
+  0% {
+    height: var(--spacing-5);
+  }
+  100% {
+    height: var(--spacing-4);
+  }
+}
+@keyframes scale-down-logo {
+  0% {
+    height: var(--spacing-5);
+  }
+  100% {
+    height: var(--spacing-4);
+  }
+}
+
+/* Animation scale-up-logo */
+
+.scale-up-logo {
+  -webkit-animation: scale-up-logo 0.25s cubic-bezier(0.55, 0.085, 0.68, 0.53)
+    both;
+  animation: scale-up-logo 0.25s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+}
+
+@-webkit-keyframes scale-up-logo {
+  0% {
+    height: var(--spacing-4);
+  }
+  100% {
+    height: var(--spacing-5);
+  }
+}
+@keyframes scale-up-logo {
+  0% {
+    height: var(--spacing-4);
+  }
+  100% {
+    height: var(--spacing-5);
   }
 }
