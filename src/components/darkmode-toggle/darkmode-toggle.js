@@ -14,7 +14,7 @@ import { DarkModeSwitch } from "react-toggle-dark-mode"
  * Wraps a const to store/morph/persist darkMode state, and a toggle to change
  * it.
  */
-const DarkModeToggle = () => {
+const DarkModeToggle = ({ className, size, sunColor, moonColor }) => {
   const darkMode = useDarkMode(false, {
     onChange: state => {
       const htmlElement = document.documentElement
@@ -34,13 +34,13 @@ const DarkModeToggle = () => {
   })
 
   return (
-    <div className="">
+    <div className={`${className}`}>
       <DarkModeSwitch
         checked={darkMode.value}
         onChange={darkMode.toggle}
-        size="1rem"
-        sunColor="var(--text-light)"
-        moonColor="var(--text-dark)"
+        size={`${size}`}
+        sunColor={`${sunColor}`}
+        moonColor={`${moonColor}`}
       />
     </div>
   )

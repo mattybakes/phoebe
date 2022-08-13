@@ -161,13 +161,17 @@ export default function Navbar() {
                 </div>
               </div>
             </div>
-            <div className="absolute inset-y-0 right-0 flex items-center">
+            <div className="absolute inset-y-0 right-0 space-x-7 flex items-center">
               {/* Dark Mode Toggle */}
-              <DarkToggle />
+              <DarkToggle
+                sunColor="var(--color-text)"
+                moonColor="var(--color-text)"
+                size="1rem"
+              />
               {/* Profile dropdown */}
               <Menu as="div" className="relative">
                 <div>
-                  <Menu.Button className="px-2 py-2 rounded-md text-regular font-medium">
+                  <Menu.Button className="rounded-md text-regular font-medium">
                     <span className="sr-only">Open user menu</span>
                     {keycloak && keycloak.authenticated ? (
                       <FontAwesomeIcon icon={faUserAstronaut} size="s" />
