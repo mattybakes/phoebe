@@ -1105,6 +1105,16 @@
     minimatch "^3.1.2"
     strip-json-comments "^3.1.1"
 
+"@fontsource/poppins@^4.5.9":
+  version "4.5.9"
+  resolved "https://registry.yarnpkg.com/@fontsource/poppins/-/poppins-4.5.9.tgz#e5c192aef005177c87e23c1b783415d1e9b4b7a8"
+  integrity sha512-PMHOYeUpdmdN1xk13aGvhvZZrv9Zt3ubx2PmDvnROHgefm0ixpFd3ogAi0fY/aWtlkUdvgt0mSkGGbtt5i4MsQ==
+
+"@fontsource/ubuntu-mono@^4.5.11":
+  version "4.5.11"
+  resolved "https://registry.yarnpkg.com/@fontsource/ubuntu-mono/-/ubuntu-mono-4.5.11.tgz#a4a68dc8213b252fc8bef500f60a67e269e6d5ae"
+  integrity sha512-IqqJKgp9Xc8tFeCIHPQuFbiKZC8tBU2hdIllwX2pryYfkl8/w4DuScFq9fPMfy1Mp4raFVcJALvOMOfRXkLp/w==
+
 "@gatsbyjs/parcel-namer-relative-to-cwd@^1.6.0":
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/@gatsbyjs/parcel-namer-relative-to-cwd/-/parcel-namer-relative-to-cwd-1.6.0.tgz#d1db17b7dbd52a7c1ee913ff7892b82976e5984d"

@@ -9,6 +9,8 @@
   },
   "dependencies": {
     "@babel/core": "^7.18.10",
+    "@fontsource/poppins": "^4.5.9",
+    "@fontsource/ubuntu-mono": "^4.5.11",
     "babel": "^6.23.0",
     "babel-eslint": "^10.1.0",
     "eslint": "^8.22.0",

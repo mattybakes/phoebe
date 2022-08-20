@@ -1,6 +1,6 @@
-// custom typefaces
-import "typeface-montserrat"
-import "typeface-merriweather"
+// Fontsource typefaces
+import "@fontsource/poppins"
+import "@fontsource/ubuntu-mono"
 // normalize CSS across browsers
 import "./src/normalize.css"
 // custom CSS styles
