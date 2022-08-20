@@ -1,6 +1,6 @@
 // Fontsource typefaces
-import "@fontsource/poppins"
-import "@fontsource/ubuntu-mono"
+import "@fontsource/poppins/latin-ext.css"
+import "@fontsource/ubuntu-mono/latin-ext.css"
 // @font face definitions for local fonts
 import "./src/typography.css"
 // normalize CSS across browsers
