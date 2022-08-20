@@ -10,6 +10,14 @@ module.exports = {
     siteUrl: `https://mattycakes.ca/`,
   },
   plugins: [
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: /\.inline\.svg$/,
+        },
+      },
+    },
     `gatsby-plugin-sass`,
     {
       resolve: `gatsby-plugin-json-output`,
