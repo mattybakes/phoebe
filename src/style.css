@@ -1,21 +1,6 @@
-/** 
- * Main stylesheet
- * Boilerplated from gatsby-starter-blog and inspired by certain utility 
- * classes from TailwindCSS and the accessibility concerns of Josh W. Comeau.
- * References: https://github.com/gatsbyjs/gatsby-starter-blog, 
- *             https://tailwindcss.com, https://www.joshwcomeau.com/
- */
-
-/* Import external stylesheets */
-@import url("./palette.css");
-
-/**
- * Setup Systems for styling, components should cascade their styling to these 
- * variables.
- */
+/* CSS Custom Properties Definitions */
 
 :root {
-  /* Max Width System */
   --maxWidth-none: "none";
   --maxWidth-xs: 20rem;
   --maxWidth-sm: 24rem;
@@ -25,68 +10,59 @@
   --maxWidth-2xl: 42rem;
   --maxWidth-3xl: 48rem;
   --maxWidth-4xl: 56rem;
-  --maxWidth-5xl: 64rem;
-  --maxWidth-6xl: 72rem;
-  --maxWidth-7xl: 80rem;
-  --maxWidth-8xl: 96rem;
   --maxWidth-full: "100%";
-  --maxWidth-wrapper: 1920px;
-  /* Spacing System */
+  --maxWidth-wrapper: var(--maxWidth-2xl);
   --spacing-px: "1px";
   --spacing-0: 0;
   --spacing-1: 0.25rem;
   --spacing-2: 0.5rem;
   --spacing-3: 0.75rem;
-  --spacing-3-5: 0.875rem;
   --spacing-4: 1rem;
   --spacing-5: 1.25rem;
   --spacing-6: 1.5rem;
-  --spacing-7: 1.75rem;
   --spacing-8: 2rem;
   --spacing-10: 2.5rem;
   --spacing-12: 3rem;
-  --spacing-14: 3.5rem;
   --spacing-16: 4rem;
   --spacing-20: 5rem;
   --spacing-24: 6rem;
   --spacing-32: 8rem;
-  /* Font-Family System */
-  --fontFamily-sans: "Inter", "Noto Sans HK", system-ui, -apple-system,
-    BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
-    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
-    "Noto Color Emoji";
-  --fontFamily-serif: "bely", "Times New Roman", "Georgia", Cambria, Times,
-    serif;
-  --fontFamily-mono: "IBM Plex Mono", monospace;
-  --font-body: var(--fontFamily-sans);
-  --font-heading: var(--fontFamily-serif);
-  --font-code: var(--fontFamily-mono);
-  /* Font weights */
+  --fontFamily-sans: Montserrat, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --fontFamily-serif: "Merriweather", "Georgia", Cambria, "Times New Roman",
+    Times, serif;
+  --font-body: var(--fontFamily-serif);
+  --font-heading: var(--fontFamily-sans);
   --fontWeight-normal: 400;
   --fontWeight-medium: 500;
   --fontWeight-semibold: 600;
   --fontWeight-bold: 700;
-  /* Leave as relative unit for accessibility */
-  --fontSize-root: 100%;
-  /* Cadence and Rhythm is based on base line-height 1.75 */
+  --fontWeight-extrabold: 800;
+  --fontWeight-black: 900;
+  --fontSize-root: 16px;
   --lineHeight-none: 1;
-  --lineHeight-tight: 1.25;
-  --lineHeight-relaxed: 1.5;
-  --lineHeight-normal: 1.75;
-  /* 1.333 Perfect Fourth Type Scale */
-  --fontSize-0: 0.875rem;
+  --lineHeight-tight: 1.1;
+  --lineHeight-normal: 1.5;
+  --lineHeight-relaxed: 1.625;
+  /* 1.200 Minor Third Type Scale */
+  --fontSize-0: 0.833rem;
   --fontSize-1: 1rem;
-  --fontSize-2: 1.3125rem;
-  --fontSize-3: 1.75rem;
-  --fontSize-4: 2.375rem;
-  --fontSize-5: 3.1875rem;
-  --fontSize-6: 4.1875rem;
-  --fontSize-7: 5.625rem;
+  --fontSize-2: 1.2rem;
+  --fontSize-3: 1.44rem;
+  --fontSize-4: 1.728rem;
+  --fontSize-5: 2.074rem;
+  --fontSize-6: 2.488rem;
+  --fontSize-7: 2.986rem;
+  --color-primary: #005b99;
+  --color-text: #2e353f;
+  --color-text-light: #4f5969;
+  --color-heading: #1a202c;
+  --color-heading-black: black;
+  --color-accent: #d1dce5;
 }
 
-/**
- * HTML Elements Style 
- */
+/* HTML elements */
 
 *,
 :after,
@@ -102,11 +78,9 @@ html {
 }
 
 body {
-  line-height: var(--lineHeight-normal);
   font-family: var(--font-body);
   font-size: var(--fontSize-1);
   color: var(--color-text);
-  background-color: var(--color-body);
 }
 
 footer {
@@ -114,7 +88,7 @@ footer {
 }
 
 hr {
-  background: var(--color-text);
+  background: var(--color-accent);
   height: 1px;
   border: 0;
 }
@@ -140,11 +114,13 @@ h4,
 h5,
 h6 {
   font-weight: var(--fontWeight-bold);
+  color: var(--color-heading);
 }
 
 h1 {
-  font-weight: var(--fontWeight-bold);
+  font-weight: var(--fontWeight-black);
   font-size: var(--fontSize-6);
+  color: var(--color-heading-black);
 }
 
 h2 {
@@ -221,7 +197,7 @@ li > ul {
 }
 
 blockquote {
-  color: var(--color-text-muted);
+  color: var(--color-text-light);
   margin-left: calc(-1 * var(--spacing-6));
   margin-right: var(--spacing-8);
   padding: var(--spacing-0) var(--spacing-0) var(--spacing-0) var(--spacing-6);
@@ -248,7 +224,7 @@ table {
 }
 
 table thead tr th {
-  border-bottom: 1px solid var(--color-text);
+  border-bottom: 1px solid var(--color-accent);
 }
 
 /* Link */
@@ -265,8 +241,9 @@ a:focus {
 /* Custom classes */
 
 .global-wrapper {
-  margin: auto;
+  margin: var(--spacing-0) auto;
   max-width: var(--maxWidth-wrapper);
+  padding: var(--spacing-10) var(--spacing-5);
 }
 
 .global-wrapper[data-is-root-path="true"] .bio {
@@ -353,19 +330,4 @@ a:focus {
   ol {
     list-style-position: inside;
   }
-}
-
-/**
- * Custom/Additional TailwindCSS Utility classes
- */
-
-.max-w-8xl {
-  max-width: 96rem; /* 1536px */
-}
-.text-sm {
-  font-size: 0.875rem;
-  line-height: 2;
-}
-.font-color-normal {
-  color: var(--color-text);
 }

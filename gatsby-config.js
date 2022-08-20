@@ -1,7 +1,3 @@
-require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV}`,
-})
-
 module.exports = {
   siteMetadata: {
     title: `mattycakes`,
@@ -14,66 +10,12 @@ module.exports = {
     siteUrl: `https://mattycakes.ca/`,
   },
   plugins: [
-    {
-      resolve: "gatsby-plugin-react-svg",
-      options: {
-        rule: {
-          include: /\.inline\.svg$/,
-        },
-      },
-    },
-    `gatsby-plugin-postcss`,
-    `gatsby-plugin-use-dark-mode`,
-    `gatsby-plugin-sass`,
-    {
-      resolve: `gatsby-plugin-json-output`,
-      options: {
-        siteUrl: `https://mattycakes.ca/`, // defined on top of plugins
-        graphQLQuery: `
-          {
-            allMarkdownRemark(limit: 1000) {
-              edges {
-                node {
-                  excerpt
-                  rawMarkdownBody
-                  html
-                  fields {
-                    slug
-                  }
-                  frontmatter {
-                    title
-                    description
-                    date(formatString: "MMMM DD, YYYY")
-                    modified(formatString: "MMMM DD, YYYY")
-                    tags
-                  }
-                }
-              }
-            }
-          }
-        `,
-        serialize: results =>
-          results.data.allMarkdownRemark.edges.map(({ node }) => ({
-            path: node.fields.slug, // MUST contain a path
-            page_path: node.fields.slug, // MUST contain a path
-            title: node.frontmatter.title,
-            date: node.frontmatter.date,
-            modified: node.frontmatter.modified,
-            description: node.frontmatter.description,
-            tags: node.frontmatter.tags,
-            html: node.html,
-            status: node.frontmatter.status,
-            raw_markdown_body: node.rawMarkdownBody,
-            page_priority_score: 10,
-          })),
-      },
-    },
     `gatsby-plugin-image`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/content`,
-        name: `blog`,
+        name: `Digital Garden`,
       },
     },
     {
@@ -155,7 +97,7 @@ module.exports = {
               }
             `,
             output: "/rss.xml",
-            title: "Mattycakes Digital Garden RSS Feed",
+            title: "Gatsby Starter Blog RSS Feed",
           },
         ],
       },
