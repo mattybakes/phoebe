@@ -34,8 +34,8 @@
     "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --fontFamily-mono: "Ubuntu Mono", monospace;
-  --font-body: var(--fontFamily-sans-1);
-  --font-heading: var(--fontFamily-sans-2);
+  --font-body: var(--fontFamily-sans-2);
+  --font-heading: var(--fontFamily-sans-1);
   --fontWeight-normal: 400;
   --fontWeight-medium: 500;
   --fontWeight-semibold: 600;
