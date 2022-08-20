@@ -10,6 +10,7 @@ module.exports = {
     siteUrl: `https://mattycakes.ca/`,
   },
   plugins: [
+    `gatsby-plugin-sass`,
     {
       resolve: `gatsby-plugin-json-output`,
       options: {
