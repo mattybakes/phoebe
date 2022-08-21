@@ -8,9 +8,11 @@
 import React from "react"
 import { useState, useEffect, useRef } from "react"
 import { Link } from "gatsby"
+import { useKeycloak } from "@react-keycloak/web"
 import Dropdown from "./dropdown"
 
 const Menu = ({ items, depthLevel }) => {
+  const { keycloak, initialized } = useKeycloak()
   /* Stores dropdown menu state */
   const [dropdown, setDropdown] = useState(false)
 
@@ -44,60 +46,91 @@ const Menu = ({ items, depthLevel }) => {
   }
 
   return (
-    <li
-      className="menu-items"
-      ref={ref}
-      onMouseEnter={onMouseEnter}
-      onMouseLeave={onMouseLeave}
-      onClick={closeDropdown}
-    >
-      {items.submenu && items.url ? (
-        <>
-          <button
-            type="button"
-            aria-haspopup="menu"
-            aria-expanded={dropdown ? "true" : "false"}
-            onClick={() => setDropdown(prev => !prev)}
-          >
-            {window.innerWidth < 768 && depthLevel === 0 ? (
-              items.title
+    <div className="menu-wrapper">
+      {(items.private && keycloak && keycloak.authenticated) ||
+      !items.private ? (
+        <li
+          className="menu-items"
+          ref={ref}
+          onMouseEnter={onMouseEnter}
+          onMouseLeave={onMouseLeave}
+          onClick={closeDropdown}
+        >
+          {items.submenu && items.url ? (
+            <>
+              <button
+                type="button"
+                aria-haspopup="menu"
+                aria-expanded={dropdown ? "true" : "false"}
+                onClick={() => setDropdown(prev => !prev)}
+              >
+                {window.innerWidth < 768 && depthLevel === 0 ? (
+                  items.title
+                ) : (
+                  <Link to={items.url}>
+                    {items.svg || items.svgAlt
+                      ? keycloak && keycloak.authenticated
+                        ? items.svg
+                        : items.svgAlt
+                      : items.title}
+                  </Link>
+                )}
+                {depthLevel > 0 && window.innerWidth < 768 ? null : depthLevel >
+                    0 && window.innerWidth > 768 ? (
+                  <span>&raquo;</span>
+                ) : (
+                  <span className="arrow" />
+                )}
+              </button>
+              <Dropdown
+                depthLevel={depthLevel}
+                submenus={items.submenu}
+                dropdown={dropdown}
+              />
+            </>
+          ) : !items.url && items.submenu ? (
+            <>
+              <button
+                type="button"
+                aria-haspopup="menu"
+                aria-expanded={dropdown ? "true" : "false"}
+                onClick={() => setDropdown(prev => !prev)}
+              >
+                {items.title}{" "}
+                {depthLevel > 0 ? (
+                  <span>&raquo;</span>
+                ) : (
+                  <span className="arrow" />
+                )}
+              </button>
+              <Dropdown
+                depthLevel={depthLevel}
+                submenus={items.submenu}
+                dropdown={dropdown}
+              />
+            </>
+          ) : items.login ? (
+            keycloak && keycloak.authenticated ? (
+              <a onClick={() => keycloak.logout()} className="login">
+                Logout
+              </a>
             ) : (
-              <Link to={items.url}>{items.title}</Link>
-            )}
-            {depthLevel > 0 && window.innerWidth < 768 ? null : depthLevel >
-                0 && window.innerWidth > 768 ? (
-              <span>&raquo;</span>
-            ) : (
-              <span className="arrow" />
-            )}
-          </button>
-          <Dropdown
-            depthLevel={depthLevel}
-            submenus={items.submenu}
-            dropdown={dropdown}
-          />
-        </>
-      ) : !items.url && items.submenu ? (
-        <>
-          <button
-            type="button"
-            aria-haspopup="menu"
-            aria-expanded={dropdown ? "true" : "false"}
-            onClick={() => setDropdown(prev => !prev)}
-          >
-            {items.title}{" "}
-            {depthLevel > 0 ? <span>&raquo;</span> : <span className="arrow" />}
-          </button>
-          <Dropdown
-            depthLevel={depthLevel}
-            submenus={items.submenu}
-            dropdown={dropdown}
-          />
-        </>
-      ) : (
-        <Link to={items.url}>{items.title}</Link>
-      )}
-    </li>
+              <a onClick={() => keycloak.login()} className="login">
+                Login
+              </a>
+            )
+          ) : (
+            <Link to={items.url}>
+              {items.svg || items.svgAlt
+                ? keycloak && keycloak.authenticated
+                  ? items.svg
+                  : items.svgAlt
+                : items.title}
+            </Link>
+          )}
+        </li>
+      ) : null}
+    </div>
   )
 }
 

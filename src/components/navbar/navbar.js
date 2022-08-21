@@ -7,12 +7,15 @@
 
 import React from "react"
 import { useState } from "react"
-import { menuItemsPrivate, menuItemsPublic, menuItemsLogin } from "./menu-items"
+import { useKeycloak } from "@react-keycloak/web"
+import { menuItemsMain, menuItemsLogin } from "./menu-items"
 import Menu from "./menu"
 import "./navbar.scss"
 
 export default function Navbar() {
   const [isNavExpanded, setIsNavExpanded] = useState(false)
+  /* Required Keycloak client object to check authenticaiton */
+  const { keycloak, initialized } = useKeycloak()
   const depthLevel = 0
   return (
     <nav className="navigation">
@@ -45,6 +48,21 @@ export default function Navbar() {
           isNavExpanded ? "navigation-menu expanded" : "navigation-menu"
         }
       >
+        <ul className="menus">
+          {menuItemsMain.map((menu, index) => {
+            const depthLevel = 0
+            return (
+              <Menu
+                items={menu}
+                key={index}
+                depthLevel={depthLevel}
+                isAuthenticated={keycloak.hasResourceRole("viewers")}
+              />
+            )
+          })}
+        </ul>
+      </div>
+      <div className="navigation-menu">
         <ul className="menus">
           {menuItemsLogin.map((menu, index) => {
             const depthLevel = 0

@@ -8,6 +8,10 @@
   background-color: #fff;
   color: black;
 }
+.navbar-icon {
+  width: 16px;
+  height: 16px;
+}
 .brand-name {
   text-decoration: none;
   color: black;
@@ -93,6 +97,7 @@
   align-items: center;
   flex-wrap: wrap;
   list-style: none;
+  z-index: 10;
 }
 
 .menu-items {
@@ -171,6 +176,10 @@ button span {
 @media screen and (max-width: 768px) {
   .hamburger {
     display: block;
+  }
+  .brand-name {
+    font-size: var(--fs-2);
+    line-height: var(--lh-2);
   }
   .navigation-menu .menus {
     // navigation menu is positioned to start 60px from the top of the document (which is directly below the navbar)
