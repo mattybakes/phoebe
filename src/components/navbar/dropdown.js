@@ -1,3 +1,10 @@
+/**
+ * Dropdown Sub-component
+ * Helper component that helps recursively build a dropdown menu list with the
+ * menu sub-component.
+ * References: https://blog.logrocket.com/how-create-multilevel-dropdown-menu-react/
+ */
+
 import React from "react"
 import Menu from "./menu"
 

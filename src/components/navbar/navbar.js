@@ -1,7 +1,8 @@
 /**
  * Navbar Component
  * Creates a navbar function to be used in the global layout.
- * References: https://blog.logrocket.com/create-responsive-navbar-react-css/
+ * References: https://blog.logrocket.com/create-responsive-navbar-react-css/,
+ *             https://blog.logrocket.com/how-create-multilevel-dropdown-menu-react/
  */
 
 import React from "react"
@@ -19,6 +20,7 @@ export default function Navbar() {
         Mattycake's Digital Garden
       </a>
       <button
+        aria-label="Mobile Menu"
         className="hamburger"
         onClick={() => {
           setIsNavExpanded(!isNavExpanded)

@@ -1,3 +1,10 @@
+/**
+ * Menu Items Sub-component
+ * Stores arrays of links for the navbar component.
+ * References: https://blog.logrocket.com/how-create-multilevel-dropdown-menu-react/
+ */
+
+/* Public links that are available without authentication.*/
 export const menuItemsPublic = [
   {
     title: "Home",
@@ -13,6 +20,7 @@ export const menuItemsPublic = [
   },
 ]
 
+/* Private links that are available with authentication.*/
 export const menuItemsPrivate = [
   {
     title: "Home",
@@ -36,6 +44,7 @@ export const menuItemsPrivate = [
   },
 ]
 
+/* Links that are used for Authentication. */
 export const menuItemsLogin = [
   {
     title: "Login",
