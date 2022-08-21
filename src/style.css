@@ -1,61 +1,79 @@
+@import "./palette.css";
 /* CSS Custom Properties Definitions */
 
 :root {
-  --maxWidth-none: "none";
-  --maxWidth-xs: 20rem;
-  --maxWidth-sm: 24rem;
-  --maxWidth-md: 28rem;
-  --maxWidth-lg: 32rem;
-  --maxWidth-xl: 36rem;
-  --maxWidth-2xl: 42rem;
-  --maxWidth-3xl: 48rem;
-  --maxWidth-4xl: 56rem;
-  --maxWidth-full: "100%";
-  --maxWidth-wrapper: var(--maxWidth-2xl);
-  --spacing-px: "1px";
-  --spacing-0: 0;
-  --spacing-1: 0.25rem;
-  --spacing-2: 0.5rem;
-  --spacing-3: 0.75rem;
-  --spacing-4: 1rem;
-  --spacing-5: 1.25rem;
-  --spacing-6: 1.5rem;
-  --spacing-8: 2rem;
-  --spacing-10: 2.5rem;
-  --spacing-12: 3rem;
-  --spacing-16: 4rem;
-  --spacing-20: 5rem;
-  --spacing-24: 6rem;
-  --spacing-32: 8rem;
-  --fontFamily-sans-1: "Poppins", system-ui, -apple-system, BlinkMacSystemFont,
+  --bp-sm: 640px;
+  --bp-md: 768px;
+  --bp-lg: 1024px;
+  --bp-xl: 1280px;
+  --bp-2xl: 1536px;
+  --bp-3xl: 1920px;
+  --mw-none: "none";
+  --mw-xs: 20rem;
+  --mw-sm: 24rem;
+  --mw-md: 28rem;
+  --mw-lg: 32rem;
+  --mw-xl: 36rem;
+  --mw-2xl: 42rem;
+  --mw-3xl: 48rem;
+  --mw-4xl: 56rem;
+  --mw-full: "100%";
+  --mw-wrapper: var(--mw-2xl);
+  --s-px: "1px";
+  --s-0: 0;
+  --s-1: 0.25rem;
+  --s-2: 0.5rem;
+  --s-3: 0.75rem;
+  --s-4: 1rem;
+  --s-5: 1.25rem;
+  --s-6: 1.5rem;
+  --s-7: 1.75rem;
+  --s-8: 2rem;
+  --s-9: 2.25rem;
+  --s-10: 2.5rem;
+  --s-11: 2.75rem;
+  --s-12: 3rem;
+  --s-13: 3.25rem;
+  --s-14: 3.5rem;
+  --s-16: 4rem;
+  --s-20: 5rem;
+  --s-24: 6rem;
+  --s-32: 8rem;
+  --font-sans: "Poppins", system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --fontFamily-sans-2: "Sofia Pro", system-ui, -apple-system, BlinkMacSystemFont,
+  --font-sans-alt: "Sofia Pro", system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --fontFamily-mono: "Ubuntu Mono", monospace;
-  --font-body: var(--fontFamily-sans-2);
-  --font-heading: var(--fontFamily-sans-1);
-  --fontWeight-normal: 400;
-  --fontWeight-medium: 500;
-  --fontWeight-semibold: 600;
-  --fontWeight-bold: 700;
-  --fontWeight-extrabold: 800;
-  --fontWeight-black: 900;
-  --fontSize-root: 16px;
-  --lineHeight-none: 1;
-  --lineHeight-tight: 1.1;
-  --lineHeight-normal: 1.5;
-  --lineHeight-relaxed: 1.625;
+  --font-mono: "Ubuntu Mono", monospace;
+  --font-body: var(--font-sans-alt);
+  --font-heading: var(--font-sans);
+  --font-normal: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+  --font-extrabold: 800;
+  --font-black: 900;
+  --lh-none: 1;
+  --lh-tight: 1.25;
+  --lh-normal: 1.75;
+  --lh-relaxed: 2;
+  --lh-2: 140%;
+  --lh-3: 112%;
+  --lh-4: 180.65%;
+  --lh-5: 109.8%;
+  --lh-6: 137.7%;
+  --lh-7: 124.44%;
   /* 1.200 Minor Third Type Scale */
-  --fontSize-0: 0.833rem;
-  --fontSize-1: 1rem;
-  --fontSize-2: 1.2rem;
-  --fontSize-3: 1.44rem;
-  --fontSize-4: 1.728rem;
-  --fontSize-5: 2.074rem;
-  --fontSize-6: 2.488rem;
-  --fontSize-7: 2.986rem;
+  --fs-root: 16px;
+  --fs-0: 0.833rem;
+  --fs-1: 1rem;
+  --fs-2: 1.25rem;
+  --fs-3: 1.5625rem;
+  --fs-4: 1.9375rem;
+  --fs-5: 3.1875rem;
+  --fs-6: 3.8125rem;
+  --fs-7: 5.625rem;
   --color-primary: #005b99;
   --color-text: #2e353f;
   --color-text-light: #4f5969;
@@ -73,15 +91,15 @@
 }
 
 html {
-  line-height: var(--lineHeight-normal);
-  font-size: var(--fontSize-root);
+  line-height: var(--lh-normal);
+  font-size: var(--fs-root);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 body {
   font-family: var(--font-body);
-  font-size: var(--fontSize-1);
+  font-size: var(--fs-1);
   color: var(--color-text);
   -moz-font-feature-settings: "ss05" on, "liga" on, "clig" on, "calt" on,
     "kern" on;
@@ -91,7 +109,7 @@ body {
 }
 
 footer {
-  padding: var(--spacing-6) var(--spacing-0);
+  padding: var(--s-6) var(--s-0);
 }
 
 hr {
@@ -109,9 +127,8 @@ h4,
 h5,
 h6 {
   font-family: var(--font-heading);
-  margin-top: var(--spacing-12);
-  margin-bottom: var(--spacing-6);
-  line-height: var(--lineHeight-tight);
+  margin-top: var(--s-12);
+  margin-bottom: var(--s-6);
   letter-spacing: -0.025em;
   -moz-font-feature-settings: "ss02", "ss03", "ss04";
   -webkit-font-feature-settings: "ss02", "ss03", "ss04";
@@ -123,34 +140,40 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: var(--fontWeight-bold);
+  font-weight: var(--font-bold);
   color: var(--color-heading);
 }
 
 h1 {
-  font-weight: var(--fontWeight-black);
-  font-size: var(--fontSize-6);
+  font-weight: var(--font-black);
+  font-size: var(--fs-6);
   color: var(--color-heading-black);
+  line-height: var(--lh-7);
 }
 
 h2 {
-  font-size: var(--fontSize-5);
+  font-size: var(--fs-5);
+  line-height: var(--lh-6);
 }
 
 h3 {
-  font-size: var(--fontSize-4);
+  font-size: var(--fs-4);
+  line-height: var(--lh-5);
 }
 
 h4 {
-  font-size: var(--fontSize-3);
+  font-size: var(--fs-3);
+  line-height: var(--lh-4);
 }
 
 h5 {
-  font-size: var(--fontSize-2);
+  font-size: var(--fs-2);
+  line-height: var(--lh-3);
 }
 
 h6 {
-  font-size: var(--fontSize-1);
+  font-size: var(--fs-1);
+  line-height: var(--lh-2);
 }
 
 h1 > a {
@@ -170,55 +193,50 @@ h6 > a {
 /* Prose */
 
 p {
-  line-height: var(--lineHeight-relaxed);
+  line-height: var(--lh-relaxed);
   --baseline-multiplier: 0.179;
   --x-height-multiplier: 0.35;
-  margin: var(--spacing-0) var(--spacing-0) var(--spacing-8) var(--spacing-0);
-  padding: var(--spacing-0);
+  margin: var(--s-0) var(--s-0) var(--s-8) var(--s-0);
+  padding: var(--s-0);
 }
 
 ul,
 ol {
-  margin-left: var(--spacing-0);
-  margin-right: var(--spacing-0);
-  padding: var(--spacing-0);
-  margin-bottom: var(--spacing-8);
+  margin-left: var(--s-0);
+  margin-right: var(--s-0);
+  padding: var(--s-0);
+  margin-bottom: var(--s-8);
   list-style-position: outside;
   list-style-image: none;
 }
 
 ul li,
 ol li {
-  padding-left: var(--spacing-0);
-  margin-bottom: calc(var(--spacing-8) / 2);
+  padding-left: var(--s-0);
+  margin-bottom: calc(var(--s-8) / 2);
 }
 
 li > p {
-  margin-bottom: calc(var(--spacing-8) / 2);
+  margin-bottom: calc(var(--s-8) / 2);
 }
 
 li *:last-child {
-  margin-bottom: var(--spacing-0);
-}
-
-li > ul {
-  margin-left: var(--spacing-8);
-  margin-top: calc(var(--spacing-8) / 2);
+  margin-bottom: var(--s-0);
 }
 
 blockquote {
   color: var(--color-text-light);
-  margin-left: calc(-1 * var(--spacing-6));
-  margin-right: var(--spacing-8);
-  padding: var(--spacing-0) var(--spacing-0) var(--spacing-0) var(--spacing-6);
-  border-left: var(--spacing-1) solid var(--color-primary);
-  font-size: var(--fontSize-2);
+  margin-left: calc(-1 * var(--s-6));
+  margin-right: var(--s-8);
+  padding: var(--s-0) var(--s-0) var(--s-0) var(--s-6);
+  border-left: var(--s-1) solid var(--color-primary);
+  font-size: var(--fs-2);
   font-style: italic;
-  margin-bottom: var(--spacing-8);
+  margin-bottom: var(--s-8);
 }
 
 blockquote > :last-child {
-  margin-bottom: var(--spacing-0);
+  margin-bottom: var(--s-0);
 }
 
 blockquote > ul,
@@ -228,7 +246,7 @@ blockquote > ol {
 
 table {
   width: 100%;
-  margin-bottom: var(--spacing-8);
+  margin-bottom: var(--s-8);
   border-collapse: collapse;
   border-spacing: 0.25rem;
 }
@@ -251,90 +269,89 @@ a:focus {
 /* Custom classes */
 
 .global-wrapper {
-  margin: var(--spacing-0) auto;
-  max-width: var(--maxWidth-wrapper);
-  padding: var(--spacing-10) var(--spacing-5);
+  margin: var(--s-0) auto;
+  max-width: var(--bp-3xl);
 }
 
 .global-wrapper[data-is-root-path="true"] .bio {
-  margin-bottom: var(--spacing-20);
+  margin-bottom: var(--s-20);
 }
 
 .global-header {
-  margin-bottom: var(--spacing-12);
+  margin-bottom: var(--s-12);
 }
 
 .main-heading {
-  font-size: var(--fontSize-7);
+  font-size: var(--fs-7);
   margin: 0;
 }
 
 .post-list-item {
-  margin-bottom: var(--spacing-8);
-  margin-top: var(--spacing-8);
+  margin-bottom: var(--s-8);
+  margin-top: var(--s-8);
 }
 
 .post-list-item p {
-  margin-bottom: var(--spacing-0);
+  margin-bottom: var(--s-0);
 }
 
 .post-list-item h2 {
-  font-size: var(--fontSize-4);
+  font-size: var(--fs-4);
   color: var(--color-primary);
-  margin-bottom: var(--spacing-2);
-  margin-top: var(--spacing-0);
+  margin-bottom: var(--s-2);
+  margin-top: var(--s-0);
 }
 
 .post-list-item header {
-  margin-bottom: var(--spacing-4);
+  margin-bottom: var(--s-4);
 }
 
 .header-link-home {
-  font-weight: var(--fontWeight-bold);
+  font-weight: var(--font-bold);
   font-family: var(--font-heading);
   text-decoration: none;
-  font-size: var(--fontSize-2);
+  font-size: var(--fs-2);
 }
 
 .bio {
   display: flex;
-  margin-bottom: var(--spacing-16);
+  margin-bottom: var(--s-16);
 }
 
 .bio p {
-  margin-bottom: var(--spacing-0);
+  margin-bottom: var(--s-0);
 }
 
 .bio-avatar {
-  margin-right: var(--spacing-4);
-  margin-bottom: var(--spacing-0);
+  margin-right: var(--s-4);
+  margin-bottom: var(--s-0);
   min-width: 50px;
   border-radius: 100%;
 }
 
 .blog-post header h1 {
-  margin: var(--spacing-0) var(--spacing-0) var(--spacing-4) var(--spacing-0);
+  margin: var(--s-0) var(--s-0) var(--s-4) var(--s-0);
 }
 
 .blog-post header p {
-  font-size: var(--fontSize-2);
+  font-size: var(--fs-2);
   font-family: var(--font-heading);
 }
 
 .blog-post-nav ul {
-  margin: var(--spacing-0);
+  margin: var(--s-0);
 }
 
 .gatsby-highlight {
-  margin-bottom: var(--spacing-8);
+  margin-bottom: var(--s-8);
 }
 
 /* Media queries */
 
 @media (max-width: 42rem) {
   blockquote {
-    padding: var(--spacing-0) var(--spacing-0) var(--spacing-0) var(--spacing-4);
-    margin-left: var(--spacing-0);
+    padding: var(--s-0) var(--s-0) var(--s-0) var(--s-4);
+    margin-left: var(--s-0);
   }
   ul,
   ol {

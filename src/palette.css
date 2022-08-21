@@ -1,0 +1,22 @@
+:root {
+  /* Primary Colours */
+  --dark500: #151719;
+  --dark400: #202326;
+  --dark300: #2a2e32;
+  --dark200: #353a3f;
+  --dark100: #686d72;
+  --light100: #ffffff;
+  --light200: #cccccc;
+  --light300: #999999;
+  --light400: #666666;
+  --light500: #333333;
+  /* Rainbow Colours */
+  --pink: #ffc4eb;
+  --red: #f4845f;
+  --orange: #e3ad69;
+  --yellow: #fed766;
+  --green: #b9e3c6;
+  --aqua: #bbe5ed;
+  --blue: #91b1d9;
+  --purple: #8d86c9;
+}
