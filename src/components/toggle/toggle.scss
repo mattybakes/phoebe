@@ -1,0 +1,119 @@
+.toggle-switch {
+  position: relative;
+  width: 70px;
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  text-align: left;
+  &-checkbox {
+    display: none;
+  }
+  &-label {
+    display: block;
+    overflow: hidden;
+    cursor: pointer;
+    border: 0 solid var(--color-yellow);
+    border-radius: 0px;
+    margin: 0;
+    &:focus {
+      outline: none;
+      > span {
+        box-shadow: 0 0 2px 5px var(--color-yellow);
+      }
+    }
+    > span:focus {
+      outline: none;
+    }
+  }
+  &-inner {
+    display: block;
+    width: 200%;
+    margin-left: -100%;
+    transition: margin 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+    &:before,
+    &:after {
+      display: block;
+      float: left;
+      width: 50%;
+      height: 28px;
+      padding: 0;
+      line-height: 28px;
+      font-size: 10px;
+      color: white;
+      font-weight: bold;
+      box-sizing: border-box;
+    }
+    &:before {
+      content: attr(data-yes);
+      text-transform: uppercase;
+      padding-left: 10px;
+      background-color: var(--color-primary);
+      color: var(--color-white);
+    }
+  }
+  &-disabled {
+    background-color: var(--color-muted);
+    cursor: not-allowed;
+    &:before {
+      background-color: var(--color-muted);
+      cursor: not-allowed;
+    }
+  }
+  &-inner:after {
+    content: attr(data-no);
+    text-transform: uppercase;
+    padding-right: 10px;
+    background-color: var(--color-yellow);
+    color: var(--color-white);
+    text-align: right;
+  }
+  &-switch {
+    display: block;
+    width: 18px;
+    margin: 5px;
+    background: var(--color-white);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 42px;
+    border: 0 solid var(--color-yellow);
+    border-radius: 0px;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  &-checkbox:checked + &-label {
+    .toggle-switch-inner {
+      margin-left: 0;
+    }
+    .toggle-switch-switch {
+      right: 0px;
+    }
+  }
+  &.small-switch {
+    width: 28px;
+    top: -2px;
+    .toggle-switch-inner {
+      &:after,
+      &:before {
+        content: "";
+        height: 16px;
+        line-height: 16px;
+      }
+    }
+    .toggle-switch-switch {
+      width: 8px;
+      right: 12px;
+      margin: 4px;
+    }
+  }
+  @media screen and (max-width: 991px) {
+    transform: scale(0.9);
+  }
+  @media screen and (max-width: 767px) {
+    transform: scale(0.825);
+  }
+  @media screen and (max-width: 575px) {
+    transform: scale(0.75);
+  }
+}

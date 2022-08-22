@@ -4,6 +4,7 @@ import { Link } from "gatsby"
 import { links } from "./links"
 import Xmark from "./xmark.inline.svg"
 import Shuffle from "../../animations/word-shuffle"
+import Darkmode from "../../components/darkmode"
 import "./left-sidebar.scss"
 
 export const LeftSidebar = props => {
@@ -36,11 +37,16 @@ export const LeftSidebar = props => {
         {links.map((link, index) => {
           return (
             <li className="left-sidebar-items" key={index} onClick={closeNav}>
-              <Link to={link.url}><Shuffle text={link.title}/></Link>
+              <Link to={link.url}>
+                <Shuffle text={link.title} />
+              </Link>
             </li>
           )
         })}
       </ul>
+      <div>
+        <Darkmode />
+      </div>
     </nav>
   )
 }

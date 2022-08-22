@@ -10,6 +10,7 @@ module.exports = {
     siteUrl: `https://mattycakes.ca/`,
   },
   plugins: [
+    "gatsby-plugin-use-dark-mode",
     {
       resolve: "gatsby-plugin-react-svg",
       options: {
