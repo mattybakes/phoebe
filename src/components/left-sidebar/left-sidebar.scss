@@ -1,0 +1,12 @@
+.left-sidebar-nav {
+  padding: var(--p-regular);
+  flex-direction: column;
+  display: flex;
+}
+.left-sidebar-header {
+  display: flex;
+  flex-direction: row-reverse;
+}
+.left-sidebar-items {
+  list-style: none;
+}

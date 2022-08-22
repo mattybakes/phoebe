@@ -6,65 +6,37 @@
  */
 
 import React from "react"
-import { useState } from "react"
-import { useKeycloak } from "@react-keycloak/web"
-import { menuItemsMain, menuItemsLogin } from "./menu-items"
+import { menuItemsMain } from "./menu-items"
 import Menu from "./menu"
+import Bars from "./bars.inline.svg"
+import BarsStaggered from "./bars-staggered.inline.svg"
+import Logo from "./logo.inline.svg"
 import "./navbar.scss"
 
-export default function Navbar() {
-  const [isNavExpanded, setIsNavExpanded] = useState(false)
+export default function Navbar(props) {
+  const { isNavExpanded, setIsNavExpanded } = props
   /* Required Keycloak client object to check authenticaiton */
-  const { keycloak, initialized } = useKeycloak()
-  const depthLevel = 0
   return (
     <nav className="navigation">
-      <a href="/" className="brand-name">
-        Mattycake's Digital Garden
-      </a>
       <button
-        aria-label="Mobile Menu"
+        aria-label="Open Sidebar Menu"
         className="hamburger"
         onClick={() => {
           setIsNavExpanded(!isNavExpanded)
         }}
       >
-        {/* icon from heroicons.com */}
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-5 w-5"
-          viewBox="0 0 20 20"
-          fill="white"
-        >
-          <path
-            fillRule="evenodd"
-            d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
-            clipRule="evenodd"
-          />
-        </svg>
+        {isNavExpanded ? (
+          <BarsStaggered className="navbar-icon" />
+        ) : (
+          <Bars className="navbar-icon" />
+        )}
       </button>
-      <div
-        className={
-          isNavExpanded ? "navigation-menu expanded" : "navigation-menu"
-        }
-      >
-        <ul className="menus">
-          {menuItemsMain.map((menu, index) => {
-            const depthLevel = 0
-            return (
-              <Menu
-                items={menu}
-                key={index}
-                depthLevel={depthLevel}
-                isAuthenticated={keycloak.hasResourceRole("viewers")}
-              />
-            )
-          })}
-        </ul>
-      </div>
+      <a href="/" className="brand-name">
+        <Logo />
+      </a>
       <div className="navigation-menu">
         <ul className="menus">
-          {menuItemsLogin.map((menu, index) => {
+          {menuItemsMain.map((menu, index) => {
             const depthLevel = 0
             return <Menu items={menu} key={index} depthLevel={depthLevel} />
           })}

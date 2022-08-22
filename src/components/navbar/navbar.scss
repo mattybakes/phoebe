@@ -1,58 +1,29 @@
 .navigation {
-  height: 60px;
   width: 100%;
   display: flex;
   align-items: center;
   position: relative;
-  padding: var(--s-14);
   background-color: #fff;
   color: black;
 }
 .navbar-icon {
-  width: 16px;
-  height: 16px;
+  height: 18px;
 }
 .brand-name {
   text-decoration: none;
   color: black;
-  font-size: var(--fs-3);
-  line-height: var(--lh-3);
-  font-family: var(--font-sans);
-  font-weight: var(--font-black);
-  background: linear-gradient(
-    39deg,
-    var(--pink) 12%,
-    transparent 12%,
-    transparent 12.5%,
-    var(--red) 12.5%,
-    var(--red) 24.5%,
-    transparent 24.5%,
-    transparent 25%,
-    var(--orange) 25%,
-    var(--orange) 37%,
-    transparent 37%,
-    transparent 37.5%,
-    var(--yellow) 37.5%,
-    var(--yellow) 49.5%,
-    transparent 49.5%,
-    transparent 50%,
-    var(--green) 50%,
-    var(--green) 62%,
-    transparent 62%,
-    transparent 62.5%,
-    var(--aqua) 62.5%,
-    var(--aqua) 74.6%,
-    transparent 74.5%,
-    transparent 75%,
-    var(--blue) 75%,
-    var(--blue) 87%,
-    transparent 87%,
-    transparent 87.5%,
-    var(--purple) 87.5%
-  );
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
+  height: 28px;
+}
+.brand-name svg {
+  height: 28px;
+  .logo {
+    transition: fill 0.4375s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+  }
+}
+.brand-name svg:hover {
+  .logo {
+    fill: var(--pink);
+  }
 }
 .navigation-menu {
   margin-left: auto;
@@ -75,31 +46,28 @@
 .hamburger {
   // removes default border on button element
   border: 0;
-  height: 40px;
-  width: 40px;
-  padding: 0.5rem;
-  border-radius: 50%;
-  background-color: #283b8b;
+  height: var(--c-1);
+  width: var(--c-1);
+  padding: calc((var(--s-5)) / 4);
   cursor: pointer;
-  transition: background-color 0.2s ease-in-out;
+  fill: black;
+  transition: fill 0.4375s cubic-bezier(0.895, 0.03, 0.685, 0.22);
   // positions the icon to the right and center aligns it vertically
-  position: absolute;
-  top: 50%;
-  right: 25px;
-  transform: translateY(-50%);
-  display: none;
 }
 .hamburger:hover {
-  background-color: #2642af;
+  fill: #2642af;
 }
 .menus {
+  margin: 0;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   list-style: none;
   z-index: 10;
 }
-
+.menu-wrapper {
+  margin: auto;
+}
 .menu-items {
   position: relative;
   font-size: 14px;
@@ -130,7 +98,6 @@ button span {
 .menu-items > a,
 .menu-items button {
   text-align: left;
-  padding: 0.7rem 1rem;
 }
 
 .menu-items a:hover,
@@ -180,36 +147,5 @@ button span {
   .brand-name {
     font-size: var(--fs-2);
     line-height: var(--lh-2);
-  }
-  .navigation-menu .menus {
-    // navigation menu is positioned to start 60px from the top of the document (which is directly below the navbar)
-    position: absolute;
-    top: 60px;
-    left: 0;
-    // stacks the li tags vertically
-    flex-direction: column;
-    // makes menu span full height and width
-    width: 100%;
-    height: calc(100vh - 77px);
-    background-color: white;
-    border-top: 1px solid black;
-    display: none;
-  }
-  .navigation-menu.expanded .menus {
-    display: block;
-  }
-  .navigation-menu li {
-    // centers link text and strips off margin
-    text-align: center;
-    margin: 0;
-  }
-  .navigation-menu li a {
-    color: black;
-    // increases the surface area of the anchor tag to span the full width of the menu
-    width: 100%;
-    padding: 1.5rem 0;
-  }
-  .navigation-menu li:hover {
-    background-color: #eee;
   }
 }
