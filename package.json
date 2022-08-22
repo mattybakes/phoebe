@@ -36,6 +36,7 @@
     "prismjs": "^1.28.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
+    "react-random-reveal": "^2.0.0",
     "sass": "^1.54.5",
     "typeface-merriweather": "0.0.72",
     "typeface-montserrat": "0.0.75",

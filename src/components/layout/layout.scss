@@ -10,7 +10,7 @@
     "left-sidebar header header right-sidebar"
     "left-sidebar main main right-sidebar"
     "left-sidebar footer footer right-sidebar";
-  transition: left 0.4375s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+  transition: left 0.3s cubic-bezier(0.23, 1, 0.32, 1);
 }
 .layout.show {
   left: 0;
@@ -22,7 +22,7 @@
   height: 100%;
   width: 100%;
   border-right: 1px solid whitesmoke;
-  transition: left 0.4375s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+  transition: left 0.3s cubic-bezier(0.23, 1, 0.32, 1);
   z-index: -1;
 }
 .layout-cover.show {

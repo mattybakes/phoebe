@@ -17,7 +17,7 @@
 .brand-name svg {
   height: 28px;
   .logo {
-    transition: fill 0.4375s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+    transition: fill 0.3s cubic-bezier(0.23, 1, 0.32, 1);
   }
 }
 .brand-name svg:hover {
@@ -51,7 +51,7 @@
   padding: calc((var(--s-5)) / 4);
   cursor: pointer;
   fill: black;
-  transition: fill 0.4375s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+  transition: fill 0.3s cubic-bezier(0.23, 1, 0.32, 1);
   // positions the icon to the right and center aligns it vertically
 }
 .hamburger:hover {
