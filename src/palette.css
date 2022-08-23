@@ -1,15 +1,17 @@
 :root {
   /* Primary Colours */
-  --dark500: #151719;
-  --dark400: #202326;
-  --dark300: #2a2e32;
-  --dark200: #353a3f;
-  --dark100: #686d72;
+  --dark600: #1a1e22;
+  --dark500: #22282e;
+  --dark400: #2b3239;
+  --dark300: #555b61;
+  --dark200: #808488;
+  --dark100: #aaadb0;
   --light100: #ffffff;
-  --light200: #cccccc;
-  --light300: #999999;
-  --light400: #666666;
-  --light500: #333333;
+  --light200: #e6e6e6;
+  --light300: #cccccc;
+  --light400: #b3b3b3;
+  --light500: #999999;
+  --light600: #808080;
   /* Rainbow Colours */
   --pink: #ffc4eb;
   --red: #f4845f;
@@ -25,8 +27,8 @@
   --color-primary: var(--dark400);
   --color-secondary: var(--light100);
   --color-muted: var(--light300);
-  --color-white: var(--light100);
   --color-black: var(--dark400);
+  --color-white: var(--light100);
   --color-pink: var(--pink);
   --color-red: var(--red);
   --color-orange: var(--orange);
@@ -35,8 +37,12 @@
   --color-aqua: var(--aqua);
   --color-blue: var(--blue);
   --color-purple: var(--purple);
+  --color-accent: var(--yellow);
 }
-dark-mode:root {
-  --color-primary: var(--light200);
-  --color-secondary: var(--dark300);
+:root.dark-mode {
+  --color-primary: var(--light100);
+  --color-secondary: var(--dark400);
+  --color-muted: var(--light300);
+  --color-black: var(--dark500);
+  --color-white: var(--light100);
 }

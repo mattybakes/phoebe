@@ -38,7 +38,7 @@ export const LeftSidebar = props => {
           return (
             <li className="left-sidebar-items" key={index} onClick={closeNav}>
               <Link to={link.url}>
-                <Shuffle text={link.title} />
+                <Shuffle className="black" text={link.title} />
               </Link>
             </li>
           )

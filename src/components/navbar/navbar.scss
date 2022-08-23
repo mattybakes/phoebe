@@ -3,26 +3,26 @@
   display: flex;
   align-items: center;
   position: relative;
-  background-color: #fff;
-  color: black;
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
 }
 .navbar-icon {
   height: 18px;
 }
 .brand-name {
   text-decoration: none;
-  color: black;
   height: 28px;
 }
 .brand-name svg {
   height: 28px;
   .logo {
+    fill: var(--color-primary);
     transition: fill 0.3s cubic-bezier(0.23, 1, 0.32, 1);
   }
 }
 .brand-name svg:hover {
   .logo {
-    fill: var(--pink);
+    fill: var(--color-accent);
   }
 }
 .navigation-menu {
@@ -50,12 +50,12 @@
   width: var(--c-1);
   padding: calc((var(--s-5)) / 4);
   cursor: pointer;
-  fill: black;
-  transition: fill 0.3s cubic-bezier(0.23, 1, 0.32, 1);
-  // positions the icon to the right and center aligns it vertically
+  fill: var(--color-secondary);
+  transition: background-color 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  background-color: var(--color-primary);
 }
 .hamburger:hover {
-  fill: #2642af;
+  background-color: var(--color-accent);
 }
 .menus {
   margin: 0;

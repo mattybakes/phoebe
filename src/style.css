@@ -87,11 +87,6 @@
   --c-9: 8.75rem;
   --c-10: 9.625rem;
   --c-11: 10.5rem;
-  --color-text: #2e353f;
-  --color-text-light: #4f5969;
-  --color-heading: #1a202c;
-  --color-heading-black: black;
-  --color-accent: #d1dce5;
 }
 
 /* Primary Variables - Default */
@@ -128,7 +123,8 @@ html {
 body {
   font-family: var(--font-body);
   font-size: var(--fs-1);
-  color: var(--color-text);
+  color: var(--color-primary);
+  background-color: var(--color-secondary);
   -moz-font-feature-settings: "ss05" on, "liga" on, "clig" on, "calt" on,
     "kern" on;
   -webkit-font-feature-settings: "ss05" on, "liga" on, "clig" on "calt" on,
@@ -141,7 +137,7 @@ footer {
 }
 
 hr {
-  background: var(--color-accent);
+  background: var(--color-primary);
   height: 1px;
   border: 0;
 }
@@ -169,13 +165,13 @@ h4,
 h5,
 h6 {
   font-weight: var(--font-bold);
-  color: var(--color-heading);
+  color: var(--color-primary);
 }
 
 h1 {
   font-weight: var(--font-black);
   font-size: var(--fs-6);
-  color: var(--color-heading-black);
+  color: var(--color-primary);
   line-height: var(--lh-7);
 }
 
@@ -253,7 +249,7 @@ li *:last-child {
 }
 
 blockquote {
-  color: var(--color-text-light);
+  color: var(--color-muted);
   margin-left: calc(-1 * var(--s-6));
   margin-right: var(--s-8);
   padding: var(--s-0) var(--s-0) var(--s-0) var(--s-6);
@@ -280,7 +276,7 @@ table {
 }
 
 table thead tr th {
-  border-bottom: 1px solid var(--color-accent);
+  border-bottom: 1px solid var(--color-primary);
 }
 
 /* Link */

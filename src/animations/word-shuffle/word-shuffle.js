@@ -120,9 +120,12 @@ export default function WordShuffle(props) {
     ],
   } = props
   const { ignoreCharacterSet } = props
+
+  /* Extra Options Added */
+  const { className } = props
   return (
     <span
-      className={isHover ? "shuffle slide" : "shuffle"}
+      className={isHover ? "slide " + `${className}` : `${className}`}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
