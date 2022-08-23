@@ -18,7 +18,7 @@ export default function WordShuffle(props) {
   /* Custom Defaults for react-random-reveal */
   const { isPlaying = true } = props
   const { text = "Default" } = props
-  const { duration = 0.4 } = props
+  const { duration = 0.3 } = props
   const { updateInterval = 0 } = props
   const { revealDuration = 1 } = props
   const { revealEasing = "linear" } = props

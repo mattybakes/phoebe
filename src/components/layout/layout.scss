@@ -20,12 +20,17 @@
   top: 0;
   left: 0;
   height: 100%;
-  width: 100%;
-  border-right: 1px solid whitesmoke;
-  transition: left 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  width: 0%;
+  transition: z-index 0.3s cubic-bezier(0.23, 1, 0.32, 1),
+    width 0.3s cubic-bezier(0.23, 1, 0.32, 1),
+    left 0.3s cubic-bezier(0.23, 1, 0.32, 1);
   z-index: -1;
 }
 .layout-cover.show {
+  width: 100%;
+  background-color: rgba(var(--color-black-rgb), 0.33);
+  animation: blur-in 0.3s cubic-bezier(0.23, 1, 0.32, 1) both;
+  -webkit-animation: blur-in 0.3s cubic-bezier(0.23, 1, 0.32, 1) both;
   left: 320px;
   z-index: 10;
 }
@@ -39,7 +44,7 @@
 .header {
   grid-area: header;
   padding: var(--p-regular);
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid var(--color-primary);
 }
 .main {
   padding: var(--p-regular);
@@ -51,7 +56,25 @@
   height: 100vh;
   z-index: 11;
   overflow: auto;
+  border-right: 1px solid var(--color-primary);
 }
 .left-sidebar.show {
   grid-area: left-sidebar;
+}
+
+@keyframes blur-in {
+  from {
+    backdrop-filter: blur(0px);
+  }
+  to {
+    backdrop-filter: blur(2px);
+  }
+}
+@-webkit-keyframes blur-in {
+  from {
+    backdrop-filter: blur(0px);
+  }
+  to {
+    backdrop-filter: blur(2px);
+  }
 }

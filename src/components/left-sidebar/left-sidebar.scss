@@ -2,14 +2,23 @@
   padding: var(--p-regular);
   flex-direction: column;
   display: flex;
+  height: 100%;
 }
 .left-sidebar-header {
   display: flex;
   flex-direction: row-reverse;
 }
+.left-sidebar-list {
+  flex-grow: 1;
+}
 .left-sidebar-items {
   list-style: none;
   a {
+    font-size: var(--para-large);
+    line-height: var(--lh-tight);
+    font-weight: var(--font-medium);
     text-decoration: none;
   }
+}
+.left-sidebar-darkmode {
 }

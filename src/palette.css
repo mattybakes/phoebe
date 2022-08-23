@@ -2,7 +2,9 @@
   /* Primary Colours */
   --dark600: #1a1e22;
   --dark500: #22282e;
+  --dark500-rgb: 34, 40, 46;
   --dark400: #2b3239;
+  --dark400-rgb: 43, 50, 57;
   --dark300: #555b61;
   --dark200: #808488;
   --dark100: #aaadb0;
@@ -28,6 +30,7 @@
   --color-secondary: var(--light100);
   --color-muted: var(--light300);
   --color-black: var(--dark400);
+  --color-black-rgb: var(--dark400-rgb);
   --color-white: var(--light100);
   --color-pink: var(--pink);
   --color-red: var(--red);
@@ -44,5 +47,6 @@
   --color-secondary: var(--dark400);
   --color-muted: var(--light300);
   --color-black: var(--dark500);
+  --color-black-rgb: var(--dark500-rgb);
   --color-white: var(--light100);
 }

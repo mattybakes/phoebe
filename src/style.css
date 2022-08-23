@@ -54,8 +54,14 @@
   --font-bold: 700;
   --font-extrabold: 800;
   --font-black: 900;
+  /* Paragraph Sizing */
+  --para-small: 0.875rem;
+  --para-regular: 1rem;
+  --para-large: 1.125rem;
+  /* Line-height */
   --lh-none: 1;
-  --lh-tight: 1.25;
+  --lh-tighter: 1.25;
+  --lh-tight: 1.55555556;
   --lh-normal: 1.75;
   --lh-relaxed: 2;
   --lh-2: 140%;
@@ -74,6 +80,7 @@
   --fs-5: 3.1875rem;
   --fs-6: 3.8125rem;
   --fs-7: 5.625rem;
+
   /* 0.75 Cadence System */
   --c-0: 0.875rem;
   --c-1: 1.75rem;
